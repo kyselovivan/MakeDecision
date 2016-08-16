@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.ivart.makedecision.Activities.AboutUsActivity;
 import com.ivart.makedecision.Activities.MakeDecisionActivity;
-import com.ivart.makedecision.Activities.MysDecisionsActivity;
+import com.ivart.makedecision.Activities.MyDecisionsActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btn_get_my_decisions:
-                intent = new Intent(this,MysDecisionsActivity.class);
+                intent = new Intent(this,MyDecisionsActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_about_us:
