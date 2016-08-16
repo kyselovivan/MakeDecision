@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         makeDecision =(Button)findViewById(R.id.btn_make_decision);
         myDecisions =(Button)findViewById(R.id.btn_get_my_decisions);
         aboutUs =(Button)findViewById(R.id.btn_about_us);
+
+        makeDecision.setOnClickListener(this);
+        myDecisions.setOnClickListener(this);
+        aboutUs.setOnClickListener(this);
     }
 
     @Override
