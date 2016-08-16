@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="make_decision">ПРИНЯТЬ РЕШЕНИЕ</string>
+    <string name="get_my_decisions">МОИ РЕШЕНИЯ</string>
+    <string name="about_us">О НАС</string>
+</resources>
