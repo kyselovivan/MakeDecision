@@ -1,10 +1,8 @@
-package com.ivart.makedecision.activity;
+package com.ivart.makedecision;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
-
-import com.ivart.makedecision.R;
 
 public class MainActivity extends AppCompatActivity {
 
