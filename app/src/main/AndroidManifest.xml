@@ -23,6 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.MakeDecisionActivity"></activity>
+        <activity android:name=".Activities.AboutUsActivity"></activity>
+        <activity android:name=".Activities.MyDecisionsActivity"></activity>
     </application>
 
 </manifest>

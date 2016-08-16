@@ -8,7 +8,7 @@ import com.ivart.makedecision.R;
 /**
  * Created by Ivan on 8/16/2016.
  */
-public class MysDecisionsActivity extends Activity{
+public class MyDecisionsActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
