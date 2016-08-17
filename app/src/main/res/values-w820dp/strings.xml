@@ -6,4 +6,5 @@
     <string name="txtv_enter_question">Введите вопрос</string>
     <string name="add_decision">Добавить решение</string>
     <string name="enter_question">Пожалуйста, введите вопрос!</string>
+    <string name="clear_decisions">Удалить решения</string>
 </resources>
