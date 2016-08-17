@@ -6,9 +6,9 @@ import com.orm.dsl.Table;
 /**
  * Created by Ivan on 8/16/2016.
  */
-
+@Table
 public class Decision extends SugarRecord {
-    @Table
+
     private Long id;
     public String mDecisionName;
 
