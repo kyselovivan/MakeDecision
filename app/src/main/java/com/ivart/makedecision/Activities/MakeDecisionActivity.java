@@ -28,18 +28,8 @@ public class MakeDecisionActivity extends AppCompatActivity {
             String name;
             @Override
             public void onClick(View v) {
-                name = decisionQuestion.getText().toString();
-                if(name.equals("")|| name == null){
                     Toast.makeText(MakeDecisionActivity.this, R.string.enter_question, Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    decision = new Decision(name);
-                    Long id = Decision.save(decision);
-                    Toast.makeText(MakeDecisionActivity.this,""+id, Toast.LENGTH_SHORT).show();
-                }
             }
         });
     }
-
-
 }

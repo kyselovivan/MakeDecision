@@ -30,14 +30,12 @@ public class MyDecisionsActivity extends Activity{
         clearDecisions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Decision.deleteAll(Decision.class);
-                myDecisions.setText("");
+
             }
         });
     }
 
     private void displayDesiosions() {
-        List<Decision> listDecisions = Decision.listAll(Decision.class);
-        myDecisions.setText(listDecisions.toString());
+
     }
 }

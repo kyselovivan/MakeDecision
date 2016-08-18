@@ -1,13 +1,6 @@
 package com.ivart.makedecision.Model;
 
-import com.orm.SugarRecord;
-import com.orm.dsl.Table;
-
-/**
- * Created by Ivan on 8/16/2016.
- */
-@Table
-public class Decision extends SugarRecord {
+public class Decision {
 
     private Long id;
     public String mDecisionName;
@@ -20,7 +13,6 @@ public class Decision extends SugarRecord {
         this.mDecisionName = mDecisionName;
     }
 
-    @Override
     public Long getId() {
         return id;
     }
