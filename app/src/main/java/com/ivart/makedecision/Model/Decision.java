@@ -1,15 +1,18 @@
 package com.ivart.makedecision.Model;
 
-public class Decision {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
+public class Decision extends RealmObject{
+    @PrimaryKey
     private Long id;
+
     public String mDecisionName;
 
     public Decision() {
     }
 
     public Decision(String mDecisionName) {
-
         this.mDecisionName = mDecisionName;
     }
 
@@ -18,7 +21,6 @@ public class Decision {
     }
 
     public String getmDecisionName() {
-
         return mDecisionName;
     }
 
