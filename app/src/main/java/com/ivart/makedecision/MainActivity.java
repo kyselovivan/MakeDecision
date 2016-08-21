@@ -10,6 +10,8 @@ import com.ivart.makedecision.Activities.AboutUsActivity;
 import com.ivart.makedecision.Activities.MakeDecisionActivity;
 import com.ivart.makedecision.Activities.MyDecisionsActivity;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button makeDecision;
@@ -23,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         makeDecision =(Button)findViewById(R.id.btn_make_decision);
         myDecisions =(Button)findViewById(R.id.btn_get_my_decisions);
         aboutUs =(Button)findViewById(R.id.btn_about_us);
-
         makeDecision.setOnClickListener(this);
         myDecisions.setOnClickListener(this);
         aboutUs.setOnClickListener(this);

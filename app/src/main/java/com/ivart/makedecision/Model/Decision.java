@@ -1,12 +1,18 @@
 package com.ivart.makedecision.Model;
 
+import java.util.concurrent.atomic.AtomicLong;
+
+import io.realm.Realm;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 public class Decision extends RealmObject{
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @PrimaryKey
     private Long id;
-
     public String mDecisionName;
 
     public Decision() {

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.ivart.makedecision.BaseApplication;
 import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.R;
 
@@ -18,13 +19,13 @@ public class MakeDecisionActivity extends AppCompatActivity {
     EditText decisionQuestion;
     Button addDecision;
     Decision decision;
-    Realm realm = Realm.getDefaultInstance();
+    Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_decision);
-
+        realm = Realm.getDefaultInstance();
         decisionQuestion = (EditText) findViewById(R.id.edt_decision_question);
         addDecision = (Button) findViewById(R.id.btn_add_decision);
 
@@ -42,22 +43,14 @@ public class MakeDecisionActivity extends AppCompatActivity {
         });
     }
 
-    private void saveIntoDatabase(final String desisionName) {
+    public void saveIntoDatabase(final String decisionName) {
         realm.executeTransactionAsync(new Realm.Transaction() {
             @Override
-            public void execute(Realm bgRealm) {
-                decision = bgRealm.createObject(Decision.class);
-                decision.setmDecisionName(desisionName);
-            }
-        }, new Realm.Transaction.OnSuccess() {
-            @Override
-            public void onSuccess() {
-                Log.v("LOG",">>>>>>>>>> success <<<<<<<<<<<<");
-            }
-        }, new Realm.Transaction.OnError() {
-            @Override
-            public void onError(Throwable error) {
-                // Transaction failed and was automatically canceled.
+            public void execute(Realm realm) {
+                decision = realm.createObject(Decision.class);
+                long id = BaseApplication.productPrimaryKey.getAndIncrement();
+                decision.setId(id);
+                decision.setmDecisionName(decisionName);
             }
         });
     }
