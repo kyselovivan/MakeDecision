@@ -3,15 +3,12 @@
     package="com.ivart.makedecision">
 
     <application
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".BaseApplication">
-
-
-
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.MakeDecisionActivity"></activity>
-        <activity android:name=".Activities.AboutUsActivity"></activity>
-        <activity android:name=".Activities.MyDecisionsActivity"></activity>
+        <activity android:name=".Activities.MakeDecisionActivity" />
+        <activity android:name=".Activities.AboutUsActivity" />
+        <activity android:name=".Activities.MyDecisionsActivity" />
+        <activity android:name=".Activities.SquareActivity"></activity>
     </application>
 
 </manifest>

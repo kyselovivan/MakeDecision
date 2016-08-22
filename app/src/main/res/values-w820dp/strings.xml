@@ -7,4 +7,7 @@
     <string name="add_decision">Добавить решение</string>
     <string name="enter_question">Пожалуйста, введите вопрос!</string>
     <string name="clear_decisions">Удалить решения</string>
+    <string name="what_will_if_it_happens">Что произойдет если это случиться?</string>
+    <string name="what_will_if_it_doesnt_happen">Что произойдет если это не случится?</string>
+    <string name="what_wont_be_if_it_happens">Что не произойдет если это случится?</string>
 </resources>
