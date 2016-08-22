@@ -21,7 +21,6 @@ public class MakeDecisionActivity extends AppCompatActivity {
     Button addDecision;
     Decision decision;
     Realm realm;
-    Long decisionId;
     Long id;
 
     @Override
