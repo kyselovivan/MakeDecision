@@ -21,8 +21,8 @@ public class MakeDecisionActivity extends AppCompatActivity {
     Button addDecision;
     Decision decision;
     Realm realm;
-    long decisionId;
-    long id = 0;
+    Long decisionId;
+    Long id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,17 +40,14 @@ public class MakeDecisionActivity extends AppCompatActivity {
                 if (name.equals("")||name == null) {
                     Toast.makeText(MakeDecisionActivity.this, R.string.enter_question, Toast.LENGTH_SHORT).show();
                 } else {
-                    decisionId = saveIntoDatabase(name);
+                    saveIntoDatabase(name);
                     decisionQuestion.getText().clear();
-                    Intent intent = new Intent(MakeDecisionActivity.this,SquareActivity.class);
-                    intent.putExtra("decisionId", decisionId);
-                    startActivity(intent);
                 }
             }
         });
     }
 
-    public long saveIntoDatabase(final String decisionName) {
+    public void saveIntoDatabase(final String decisionName) {
         realm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -58,10 +55,12 @@ public class MakeDecisionActivity extends AppCompatActivity {
                 id = BaseApplication.productPrimaryKey.getAndIncrement();
                 decision.setId(id);
                 decision.setmDecisionName(decisionName);
-
+                Intent intent = new Intent(MakeDecisionActivity.this,SquareActivity.class);
+                intent.putExtra("decisionId", id);
+                startActivity(intent);
+                Log.d("LOG",""+id);
             }
         });
-        return id;
     }
 
 }

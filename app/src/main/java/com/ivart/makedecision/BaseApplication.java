@@ -16,13 +16,12 @@ import io.realm.RealmConfiguration;
 public class BaseApplication extends Application {
 
     public static AtomicLong productPrimaryKey;
-    Realm realm;
 
     @Override
     public void onCreate() {
         super.onCreate();
         RealmConfiguration config = new RealmConfiguration.Builder(this).build();
         Realm.setDefaultConfiguration(config);
-        productPrimaryKey = new AtomicLong(System.currentTimeMillis()*1000000);
+        productPrimaryKey = new AtomicLong(System.currentTimeMillis()*100);
     }
 }
