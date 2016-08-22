@@ -1,5 +1,6 @@
 package com.ivart.makedecision.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,8 @@ public class MakeDecisionActivity extends AppCompatActivity {
     Button addDecision;
     Decision decision;
     Realm realm;
+    long decisionId;
+    long id = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,22 +40,28 @@ public class MakeDecisionActivity extends AppCompatActivity {
                 if (name.equals("")||name == null) {
                     Toast.makeText(MakeDecisionActivity.this, R.string.enter_question, Toast.LENGTH_SHORT).show();
                 } else {
-                    saveIntoDatabase(name);
+                    decisionId = saveIntoDatabase(name);
+                    decisionQuestion.getText().clear();
+                    Intent intent = new Intent(MakeDecisionActivity.this,SquareActivity.class);
+                    intent.putExtra("decisionId", decisionId);
+                    startActivity(intent);
                 }
             }
         });
     }
 
-    public void saveIntoDatabase(final String decisionName) {
+    public long saveIntoDatabase(final String decisionName) {
         realm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
                 decision = realm.createObject(Decision.class);
-                long id = BaseApplication.productPrimaryKey.getAndIncrement();
+                id = BaseApplication.productPrimaryKey.getAndIncrement();
                 decision.setId(id);
                 decision.setmDecisionName(decisionName);
+
             }
         });
+        return id;
     }
 
 }
