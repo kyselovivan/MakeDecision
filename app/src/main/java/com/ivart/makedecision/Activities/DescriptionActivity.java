@@ -55,7 +55,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
-    public void saveIntoDatabase(final Long decisionId, final int square, final String description) {
+    public void saveIntoDatabase(final Long decisionId, final int square, final String descriptionText) {
         realm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -64,14 +64,16 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                 decisionDescription.setId(id);
                 decisionDescription.setDecisionId(decisionId);
                 decisionDescription.setSquare(square);
-                decisionDescription.setDescriptionText(description);
+                decisionDescription.setDescriptionText(descriptionText);
 
                 Log.d("LOG","<<<<<<<<<<<<<<< success >>>>>>>>>>>>>>>>\n" +
                 "Decision Id = "+ decisionId + "\n" +
                 "Decision Description Id = " + id + "\n" +
-                "Decision text = " + description + "\n" +
+                "Decision text = " + descriptionText + "\n" +
                 "Decision Square = " + square + "\n");
             }
         });
+        description.getText().clear();
+        Toast.makeText(DescriptionActivity.this,R.string.description_was_added,Toast.LENGTH_LONG).show();
     }
 }

@@ -14,4 +14,5 @@
     <string name="what_wont_be_if_id_doesnt_happens">Что не произойдет если это не случится?</string>
     <string name="enter_description">Напишите описание затем нажмите \"Добавить\" для сохранения в базу данных...</string>
     <string name="add_description">Добавить описание</string>
+    <string name="description_was_added">Описание добавлено! Можете добавить ещё)</string>
 </resources>

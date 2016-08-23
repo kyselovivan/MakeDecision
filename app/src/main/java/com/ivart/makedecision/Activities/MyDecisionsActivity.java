@@ -40,7 +40,7 @@ public class MyDecisionsActivity extends Activity{
                     @Override
                     public void execute(Realm realm) {
                         results.deleteAllFromRealm();
-                        myDecisions.clearComposingText();
+                        myDecisions.setText("");
                     }
                 });
             }
