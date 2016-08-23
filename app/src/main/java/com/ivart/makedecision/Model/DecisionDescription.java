@@ -15,6 +15,16 @@ public class DecisionDescription  extends RealmObject {
     int square;
     String descriptionText;
 
+    public float getRaiting() {
+        return raiting;
+    }
+
+    public void setRaiting(float raiting) {
+        this.raiting = raiting;
+    }
+
+    float raiting;
+
     public DecisionDescription() {
     }
 

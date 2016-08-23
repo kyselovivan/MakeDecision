@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.ivart.makedecision.BaseApplication;
@@ -20,8 +21,10 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
 
     EditText description;
     Button addDescription;
+    RatingBar raitBar;
     Long decisionId;
     int square;
+    float raiting;
     Realm realm;
     DecisionDescription decisionDescription;
 
@@ -35,6 +38,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         square = intent.getIntExtra("squareNumber", 0);
         description = (EditText) findViewById(R.id.edt_decision_description);
         addDescription = (Button) findViewById(R.id.btn_add_description);
+        raitBar = (RatingBar)findViewById(R.id.raiting_bar);
 
         setOnClick();
 
@@ -47,17 +51,18 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         String text = description.getText().toString();
+        raiting = raitBar.getRating();
         switch (v.getId()) {
             case R.id.btn_add_description:
-                if (text.equals("") || text == null) {
+                if (text.equals("")) {
                     Toast.makeText(this, R.string.please_enter_description, Toast.LENGTH_LONG).show();
                 } else
-                    saveIntoDatabase(decisionId, square, text);
+                    saveIntoDatabase(decisionId, square, text,raiting);
                 break;
         }
     }
 
-    public void saveIntoDatabase(final Long decisionId, final int square, final String descriptionText) {
+    public void saveIntoDatabase(final Long decisionId, final int square, final String descriptionText,final float rait) {
         realm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -67,12 +72,14 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                 decisionDescription.setDecisionId(decisionId);
                 decisionDescription.setSquare(square);
                 decisionDescription.setDescriptionText(descriptionText);
+                decisionDescription.setRaiting(rait);
 
                 Log.d("LOG", "<<<<<<<<<<<<<<< success >>>>>>>>>>>>>>>>\n" +
                         "Decision Id = " + decisionId + "\n" +
                         "Decision Description Id = " + id + "\n" +
                         "Decision text = " + descriptionText + "\n" +
-                        "Decision Square = " + square + "\n");
+                        "Decision Square = " + square + "\n"+
+                        "Raiting = " + rait + "\n");
             }
         });
         description.getText().clear();
