@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtv_my_decisions"
+    <ListView
+        android:id="@+id/listv_decision_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"/>
+        android:layout_weight="1"></ListView>
     <Button
         android:text="@string/clear_decisions"
         android:layout_width="match_parent"

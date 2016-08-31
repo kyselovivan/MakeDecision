@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.ivart.makedecision.Adapters.DecisionListAdapter;
 import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.R;
 
@@ -22,15 +24,19 @@ public class MyDecisionsActivity extends Activity{
     TextView myDecisions;
     Button clearDecisions;
     Realm realm;
+    ListView decisionList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_decisions);
-        myDecisions = (TextView)findViewById(R.id.txtv_my_decisions);
         clearDecisions = (Button)findViewById(R.id.btn_clear_decisions);
         realm = Realm.getDefaultInstance();
-        displayDesiosions();
+        decisionList = (ListView)findViewById(R.id.listv_decision_list);
+        RealmResults<Decision> results = realm.where(Decision.class).findAll();
+        DecisionListAdapter decisionListAdapter = new DecisionListAdapter(this,results);
+        decisionList.setAdapter(decisionListAdapter);
+
 
         clearDecisions.setOnClickListener(new View.OnClickListener() {
             RealmResults<Decision> results = realm.where(Decision.class).findAll();
@@ -40,19 +46,10 @@ public class MyDecisionsActivity extends Activity{
                     @Override
                     public void execute(Realm realm) {
                         results.deleteAllFromRealm();
-                        myDecisions.setText("");
                     }
                 });
             }
         });
     }
 
-    private void displayDesiosions() {
-        String decisions = "";
-        RealmResults<Decision> results = realm.where(Decision.class).findAll();
-        for(Decision decision : results){
-            decisions += decision.toString();
-        }
-        myDecisions.setText(decisions);
-    }
 }
