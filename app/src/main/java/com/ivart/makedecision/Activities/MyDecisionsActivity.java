@@ -81,6 +81,8 @@ public class MyDecisionsActivity extends Activity{
                         });
                     }
                 });
+        dialog.create();
+        dialog.show();
     }
 
 }
