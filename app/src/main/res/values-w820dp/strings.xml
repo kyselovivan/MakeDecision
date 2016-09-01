@@ -14,4 +14,7 @@
     <string name="add_description">Добавить описание</string>
     <string name="description_was_added">Описание добавлено! Можете добавить ещё)</string>
     <string name="please_enter_description">Пожалуйста введите описание затем нажмите \"Добавить описание\"</string>
+    <string name="delete_all_decisions">Вы хотите удалить все решения?</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete_all">Удалить</string>
 </resources>
