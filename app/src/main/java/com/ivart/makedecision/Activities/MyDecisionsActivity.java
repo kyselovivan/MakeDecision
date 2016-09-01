@@ -51,15 +51,10 @@ public class MyDecisionsActivity extends Activity{
 
 
         clearDecisions.setOnClickListener(new View.OnClickListener() {
-            RealmResults<Decision> results = realm.where(Decision.class).findAll();
+
             @Override
             public void onClick(View v) {
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-                        results.deleteAllFromRealm();
-                    }
-                });
+                showDeleteDialog();
             }
         });
     }
