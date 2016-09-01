@@ -16,8 +16,11 @@ import com.ivart.makedecision.R;
 
 import io.realm.OrderedRealmCollection;
 import io.realm.RealmBaseAdapter;
+import io.realm.RealmResults;
 
 public class DecisionListAdapter extends RealmBaseAdapter<Decision> implements ListAdapter {
+
+    RealmResults<Decision> realmResults;
 
     private static class ViewHolder {
         ImageView imgStamp;
@@ -26,6 +29,7 @@ public class DecisionListAdapter extends RealmBaseAdapter<Decision> implements L
 
     public DecisionListAdapter(Context context, OrderedRealmCollection<Decision> realmResults) {
         super(context, realmResults);
+        this.realmResults = (RealmResults<Decision>)realmResults;
     }
 
     @Override
@@ -45,5 +49,9 @@ public class DecisionListAdapter extends RealmBaseAdapter<Decision> implements L
         viewHolder.imgStamp.setImageResource(R.mipmap.logo);
         viewHolder.timestamp.setText(item.getmDecisionName());
         return convertView;
+    }
+
+    public RealmResults<Decision> getRealmResults(){
+        return realmResults;
     }
 }

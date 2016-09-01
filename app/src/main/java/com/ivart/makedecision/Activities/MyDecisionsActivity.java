@@ -3,9 +3,11 @@ package com.ivart.makedecision.Activities;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ivart.makedecision.Adapters.DecisionListAdapter;
 import com.ivart.makedecision.Model.Decision;
@@ -34,8 +36,16 @@ public class MyDecisionsActivity extends Activity{
         realm = Realm.getDefaultInstance();
         decisionList = (ListView)findViewById(R.id.listv_decision_list);
         RealmResults<Decision> results = realm.where(Decision.class).findAll();
-        DecisionListAdapter decisionListAdapter = new DecisionListAdapter(this,results);
+        final DecisionListAdapter decisionListAdapter = new DecisionListAdapter(this,results);
         decisionList.setAdapter(decisionListAdapter);
+
+        decisionList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Long tempId = decisionListAdapter.getRealmResults().get(position).getId();
+                Toast.makeText(MyDecisionsActivity.this,""+tempId,Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         clearDecisions.setOnClickListener(new View.OnClickListener() {
