@@ -3,6 +3,7 @@ package com.ivart.makedecision.Activities;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -44,7 +45,9 @@ public class MyDecisionsActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Long tempId = decisionListAdapter.getRealmResults().get(position).getId();
-                Toast.makeText(MyDecisionsActivity.this, "" + tempId, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MyDecisionsActivity.this, DecisionEditActivity.class);
+                intent.putExtra("decisionId",tempId);
+                startActivity(intent);
             }
         });
 
