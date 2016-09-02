@@ -18,4 +18,6 @@
     <string name="cancel">Отмена</string>
     <string name="delete_all">Удалить</string>
     <string name="delete_description">Удалить это решение ?</string>
+    <string name="clear_description">Удалить описания</string>
+    <string name="description_rait">Рейтинг</string>
 </resources>

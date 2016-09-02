@@ -38,6 +38,7 @@ public class MyDecisionsActivity extends Activity {
         RealmResults<Decision> results = realm.where(Decision.class).findAll();
         final DecisionListAdapter decisionListAdapter = new DecisionListAdapter(this, results);
         decisionList.setAdapter(decisionListAdapter);
+
         decisionList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
