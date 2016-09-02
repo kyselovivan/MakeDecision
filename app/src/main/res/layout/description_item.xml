@@ -7,20 +7,20 @@
     <TextView
         android:id="@+id/txtv_description_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"
         android:text="text"
         android:layout_weight="1"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/description_rait"
         android:layout_weight="3"/>
     <TextView
         android:id="@+id/txtv_description_rait"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"
         android:layout_weight="3"
         />
