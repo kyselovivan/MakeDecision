@@ -17,4 +17,5 @@
     <string name="delete_all_decisions">Вы хотите удалить все решения?</string>
     <string name="cancel">Отмена</string>
     <string name="delete_all">Удалить</string>
+    <string name="delete_description">Удалить это решение ?</string>
 </resources>

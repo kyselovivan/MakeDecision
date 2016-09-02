@@ -10,13 +10,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ivart.makedecision.Adapters.DecisionListAdapter;
 import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.R;
-
-import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -46,20 +43,30 @@ public class MyDecisionsActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Long tempId = decisionListAdapter.getRealmResults().get(position).getId();
                 Intent intent = new Intent(MyDecisionsActivity.this, DecisionEditActivity.class);
-                intent.putExtra("decisionId",tempId);
+                intent.putExtra("decisionId", tempId);
                 startActivity(intent);
+            }
+        });
+
+        decisionList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Long tempId = decisionListAdapter.getRealmResults().get(position).getId();
+                showDeleteOneDecision(tempId);
+                decisionList.invalidateViews();
+                return true;
             }
         });
 
         clearDecisions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDeleteDialog();
+                showDeleteAllDeccisionsDialog();
             }
         });
     }
 
-    public void showDeleteDialog() {
+    public void showDeleteAllDeccisionsDialog() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle(R.string.delete_all_decisions)
                 .setCancelable(false)
@@ -76,6 +83,33 @@ public class MyDecisionsActivity extends Activity {
                         realm.executeTransaction(new Realm.Transaction() {
                             @Override
                             public void execute(Realm realm) {
+                                results.deleteAllFromRealm();
+                            }
+                        });
+                    }
+                });
+        dialog.create();
+        dialog.show();
+    }
+
+    public void showDeleteOneDecision(final long id) {
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle(R.string.delete_description)
+                .setCancelable(false)
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setPositiveButton(R.string.delete_all, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
+                                RealmResults<Decision> results = realm.where(Decision.class).equalTo("id",id).findAll();
                                 results.deleteAllFromRealm();
                             }
                         });
