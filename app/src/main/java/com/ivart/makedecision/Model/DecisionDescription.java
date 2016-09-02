@@ -7,7 +7,8 @@ import io.realm.annotations.PrimaryKey;
  * Created by Ivan on 8/23/2016.
  */
 
-public class DecisionDescription  extends RealmObject {
+public class
+DecisionDescription  extends RealmObject {
     @PrimaryKey
     Long id;
 

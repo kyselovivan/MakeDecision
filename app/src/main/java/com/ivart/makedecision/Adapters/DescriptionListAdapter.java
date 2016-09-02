@@ -51,4 +51,8 @@ public class DescriptionListAdapter extends RealmBaseAdapter<DecisionDescription
         viewHolder.raitStamp.setText(""+item.getRaiting());
         return convertView;
     }
+
+    public RealmResults<DecisionDescription> getRealmResults(){
+        return realmResults;
+    }
 }

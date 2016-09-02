@@ -22,4 +22,6 @@
     <string name="delete_description">Удалить это решение ?</string>
     <string name="clear_description">Удалить описания</string>
     <string name="description_rait">Рейтинг</string>
+    <string name="delete_all_descriptions">Удалить все описания ?</string>
+    <string name="delete_single_description">Удалить это описание ?</string>
 </resources>

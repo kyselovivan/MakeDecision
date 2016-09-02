@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -33,34 +34,43 @@ public class EditDescriptionListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_description_list);
         Intent intent = getIntent();
-        decisionId = intent.getLongExtra("idDecision",0);
-        square = intent.getIntExtra("squareNumber",0);
-        addDescription = (Button)findViewById(R.id.btn_add_description);
-        clearDescriptions = (Button)findViewById(R.id.btn_clear_description);
+        decisionId = intent.getLongExtra("idDecision", 0);
+        square = intent.getIntExtra("squareNumber", 0);
+        addDescription = (Button) findViewById(R.id.btn_add_description);
+        clearDescriptions = (Button) findViewById(R.id.btn_clear_description);
 
-        Toast.makeText(this,"Decision id ="+decisionId+"\n square = "+ square,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Decision id =" + decisionId + "\n square = " + square, Toast.LENGTH_SHORT).show();
 
         realm = Realm.getDefaultInstance();
         RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
-                .equalTo("decisionId",this.decisionId)
-                .equalTo("square",this.square)
+                .equalTo("decisionId", this.decisionId)
+                .equalTo("square", this.square)
                 .findAll();
-        descriptionsList = (ListView)findViewById(R.id.listv_description_list);
-        final DescriptionListAdapter descriptionListAdapter = new DescriptionListAdapter(this,results);
+        descriptionsList = (ListView) findViewById(R.id.listv_description_list);
+        final DescriptionListAdapter descriptionListAdapter = new DescriptionListAdapter(this, results);
         descriptionsList.setAdapter(descriptionListAdapter);
+
+        descriptionsList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Long tempId = descriptionListAdapter.getRealmResults().get(position).getId();
+                showDeleteSingleDescriptionDialog(tempId, square);
+                descriptionsList.invalidateViews();
+                return true;
+            }
+        });
 
         clearDescriptions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDeleteAllDeccisionsDialog(decisionId,square);
+                showDeleteAllDescriptionDialog(decisionId, square);
             }
         });
 
     }
 
 
-
-    public void showDeleteAllDeccisionsDialog(final long decisionId, final int square) {
+    public void showDeleteAllDescriptionDialog(final long decisionId, final int square) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle(R.string.delete_all_descriptions)
                 .setCancelable(false)
@@ -74,8 +84,36 @@ public class EditDescriptionListActivity extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         final RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
-                                .equalTo("decisionId",decisionId)
-                                .equalTo("square",square)
+                                .equalTo("decisionId", decisionId)
+                                .equalTo("square", square)
+                                .findAll();
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
+                                results.deleteAllFromRealm();
+                            }
+                        });
+                    }
+                });
+        dialog.create();
+        dialog.show();
+    }
+
+    public void showDeleteSingleDescriptionDialog(final long id, final int square) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle(R.string.delete_single_description)
+                .setCancelable(false)
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setPositiveButton(R.string.delete_all, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        final RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
+                                .equalTo("id", id)
+                                .equalTo("square", square)
                                 .findAll();
                         realm.executeTransaction(new Realm.Transaction() {
                             @Override
