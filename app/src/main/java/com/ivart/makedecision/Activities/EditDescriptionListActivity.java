@@ -60,6 +60,14 @@ public class EditDescriptionListActivity extends Activity {
             }
         });
 
+        descriptionsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Long tempId = descriptionListAdapter.getRealmResults().get(position).getId();
+                editDescription(tempId);
+            }
+        });
+
         clearDescriptions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,6 +133,18 @@ public class EditDescriptionListActivity extends Activity {
                 });
         dialog.create();
         dialog.show();
+    }
+
+    public void editDescription(long descriptionId){
+        Intent intent = new Intent(this, EditDescriptionActivity.class);
+        intent.putExtra("descriptionId",descriptionId);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        descriptionsList.invalidateViews();
     }
 
 }

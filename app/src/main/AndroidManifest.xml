@@ -22,7 +22,8 @@
         <activity android:name=".Activities.SquareActivity" />
         <activity android:name=".Activities.DescriptionActivity" />
         <activity android:name=".Activities.DecisionEditActivity" />
-        <activity android:name=".Activities.EditDescriptionListActivity"></activity>
+        <activity android:name=".Activities.EditDescriptionListActivity" />
+        <activity android:name=".Activities.EditDescriptionActivity"></activity>
     </application>
 
 </manifest>
