@@ -1,6 +1,8 @@
 package com.ivart.makedecision.Activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +19,7 @@ import com.ivart.makedecision.R;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-public class EditDescriptionListActivity extends Activity implements View.OnClickListener {
+public class EditDescriptionListActivity extends Activity {
 
     Long decisionId;
     int square;
@@ -47,10 +49,44 @@ public class EditDescriptionListActivity extends Activity implements View.OnClic
         final DescriptionListAdapter descriptionListAdapter = new DescriptionListAdapter(this,results);
         descriptionsList.setAdapter(descriptionListAdapter);
 
+        clearDescriptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDeleteAllDeccisionsDialog(decisionId,square);
+            }
+        });
+
     }
 
-    @Override
-    public void onClick(View v) {
 
+
+    public void showDeleteAllDeccisionsDialog(final long decisionId, final int square) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle(R.string.delete_all_descriptions)
+                .setCancelable(false)
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setPositiveButton(R.string.delete_all, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        final RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
+                                .equalTo("decisionId",decisionId)
+                                .equalTo("square",square)
+                                .findAll();
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
+                                results.deleteAllFromRealm();
+                            }
+                        });
+                    }
+                });
+        dialog.create();
+        dialog.show();
     }
+
 }
