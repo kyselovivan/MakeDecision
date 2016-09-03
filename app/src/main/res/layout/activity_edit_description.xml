@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:hint="@string/enter_description"
+        android:hint="@string/edit_hint_description"
+        android:inputType="textCapSentences"
         />
     <RatingBar
         android:id="@+id/edit_raiting_bar"

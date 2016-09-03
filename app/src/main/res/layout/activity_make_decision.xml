@@ -17,6 +17,7 @@
         android:layout_height="match_parent"
         android:hint="What if ...?"
         android:id="@+id/edt_decision_question"
+        android:inputType="textCapSentences"
         android:layout_weight="1"/>
     <Button
         android:textAlignment="center"
