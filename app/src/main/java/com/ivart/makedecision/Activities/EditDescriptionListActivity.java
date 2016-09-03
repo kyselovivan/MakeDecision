@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,7 +12,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.ivart.makedecision.Adapters.DescriptionListAdapter;
-import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.Model.DecisionDescription;
 import com.ivart.makedecision.R;
 
@@ -78,7 +76,7 @@ public class EditDescriptionListActivity extends Activity {
         addDescription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                addSingleDescription(decisionId,square);
             }
         });
 

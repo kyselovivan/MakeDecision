@@ -48,14 +48,6 @@ public class EditDescriptionActivity extends Activity {
         });
     }
 
-//    public void updateNewCard(Realm realm, VisitingCardPOJO card) {
-//        VisitingCardPOJO toEdit = realm.where(VisitingCardPOJO.class)
-//                .equalTo("no", card.getNo()).findFirst();
-//        realm.beginTransaction();
-//        toEdit.setName(card.getName());
-//        toEdit.setAddress(card.getAddress());
-//        realm.commitTransaction();
-//    }
 
     public void updateDescription(Realm realm){
         DecisionDescription toEdit = realm.where(DecisionDescription.class)
