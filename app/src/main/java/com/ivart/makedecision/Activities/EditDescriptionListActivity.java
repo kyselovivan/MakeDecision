@@ -2,7 +2,6 @@ package com.ivart.makedecision.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,7 +10,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.ivart.makedecision.Adapters.DescriptionListAdapter;
-import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.Model.DecisionDescription;
 import com.ivart.makedecision.R;
 
@@ -58,10 +56,25 @@ public class EditDescriptionListActivity extends Activity implements View.OnClic
             }
         });
 
+        descriptionsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Long tempId = descriptionListAdapter.getRealmResults().get(position).getId();
+                editDescription(tempId);
+            }
+        });
+
         clearDescriptions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDeleteAllDescriptionDialog(decisionId, square);
+            }
+        });
+
+        addDescription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addSingleDescription(decisionId,square);
             }
         });
 
@@ -123,6 +136,25 @@ public class EditDescriptionListActivity extends Activity implements View.OnClic
                 });
         dialog.create();
         dialog.show();
+    }
+
+    public void editDescription(long descriptionId){
+        Intent intent = new Intent(this, EditDescriptionActivity.class);
+        intent.putExtra("descriptionId",descriptionId);
+        startActivity(intent);
+    }
+
+    public void addSingleDescription(long decisionId, int square){
+        Intent intent = new Intent(this, DescriptionActivity.class);
+        intent.putExtra("editDecisionId",decisionId);
+        intent.putExtra("editSquare",square);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        descriptionsList.invalidateViews();
     }
 
 }

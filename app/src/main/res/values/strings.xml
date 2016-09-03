@@ -25,4 +25,6 @@
     <string name="description_rait">Рейтинг</string>
     <string name="delete_all_descriptions">Удалить все описания ?</string>
     <string name="delete_single_description">Удалить это описание ?</string>
+    <string name="edit_description">Обновить описание</string>
+    <string name="edit_hint_description">Редактируйте описание после нажмите \"Обновить описание\"</string>
 </resources>
