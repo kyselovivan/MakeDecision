@@ -28,12 +28,17 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
     Realm realm;
     DecisionDescription decisionDescription;
 
+    long editId;
+    int editSquare;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
         Intent intent = getIntent();
         decisionId = intent.getLongExtra("idDecision", 0L);
+        editId = intent.getLongExtra("editDecisionId",0L);
+        editSquare = intent.getIntExtra("editSquare",0);
         realm = Realm.getDefaultInstance();
         square = intent.getIntExtra("squareNumber", 0);
         description = (EditText) findViewById(R.id.edt_decision_description);
@@ -57,7 +62,10 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                 if (text.equals("")) {
                     Toast.makeText(this, R.string.please_enter_description, Toast.LENGTH_LONG).show();
                 } else
-                    saveIntoDatabase(decisionId, square, text,raiting);
+                    if(editSquare!=0){
+                        saveIntoDatabase(editId,editSquare,text,raiting);
+                    }
+                else saveIntoDatabase(decisionId, square, text,raiting);
                 break;
         }
     }

@@ -75,6 +75,13 @@ public class EditDescriptionListActivity extends Activity {
             }
         });
 
+        addDescription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 
 
@@ -138,6 +145,13 @@ public class EditDescriptionListActivity extends Activity {
     public void editDescription(long descriptionId){
         Intent intent = new Intent(this, EditDescriptionActivity.class);
         intent.putExtra("descriptionId",descriptionId);
+        startActivity(intent);
+    }
+
+    public void addSingleDescription(long decisionId, int square){
+        Intent intent = new Intent(this, DescriptionActivity.class);
+        intent.putExtra("editDecisionId",decisionId);
+        intent.putExtra("editSquare",square);
         startActivity(intent);
     }
 
