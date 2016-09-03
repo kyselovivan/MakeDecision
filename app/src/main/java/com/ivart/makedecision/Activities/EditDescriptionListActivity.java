@@ -1,6 +1,8 @@
 package com.ivart.makedecision.Activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +18,7 @@ import com.ivart.makedecision.R;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-public class EditDescriptionListActivity extends Activity implements View.OnClickListener {
+public class EditDescriptionListActivity extends Activity  {
 
     Long decisionId;
     int square;
