@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.ivart.makedecision.Adapters.DecisionListAdapter;
 import com.ivart.makedecision.Model.Decision;
@@ -23,7 +22,6 @@ import io.realm.RealmResults;
  */
 public class MyDecisionsActivity extends Activity {
 
-    TextView myDecisions;
     Button clearDecisions;
     Realm realm;
     ListView decisionList;

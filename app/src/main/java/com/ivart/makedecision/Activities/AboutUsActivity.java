@@ -8,7 +8,7 @@ import com.ivart.makedecision.R;
 /**
  * Created by Ivan on 8/16/2016.
  */
-public class AboutProgramActivity extends Activity{
+public class AboutUsActivity extends Activity{
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
