@@ -5,7 +5,7 @@
     <string name="about_us">Про нас</string>
     <string name="add_decision">Додати рішення</string>
     <string name="add_description">Додати опис</string>
-    <string name="cancel">Відмінв</string>
+    <string name="cancel">Відміна</string>
     <string name="clear_decisions">Видалити рішення</string>
     <string name="clear_description">Видалити опис</string>
     <string name="delete_all">Видалити</string>
@@ -14,8 +14,8 @@
     <string name="delete_single_description">Видалити цей опис?</string>
     <string name="description_rait">Рейтинг</string>
     <string name="description_was_added">Опис додано! можете додати ще)</string>
-    <string name="edit_description">Оновит опис</string>
-    <string name="edit_hint_description">Редагуйте опис, після натисніть \"Оновтит опис\"</string>
+    <string name="edit_description">Оновити опис</string>
+    <string name="edit_hint_description">Редагуйте опис, після натисніть \"Оновтити опис\"</string>
     <string name="enter_description">Додайте опис, після натисніть \"Додати опис\"</string>
     <string name="enter_question">Будь ласка введіть назву рішення!</string>
     <string name="get_my_decisions">МОЇ РІШЕННЯ</string>
@@ -26,4 +26,5 @@
     <string name="what_will_if_it_happens">Що буде, якщо це трапиться?</string>
     <string name="what_wont_be_if_id_doesnt_happens">Чого не відбудеться, якщо цього не трапиться?</string>
     <string name="what_wont_be_if_it_happens">Чого не відбудеться, якщо це трапиться?</string>
+    <string name="hint_enter_the_question">Введіть цікавляче вас питання або проблему...</string>
 </resources>

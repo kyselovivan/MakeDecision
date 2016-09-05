@@ -26,4 +26,5 @@
     <string name="delete_single_description">Удалить это описание ?</string>
     <string name="edit_description">Обновить описание</string>
     <string name="edit_hint_description">Редактируйте описание после нажмите \"Обновить описание\"</string>
+    <string name="hint_enter_the_question">Введите интересующий вас вопрос или проблему...</string>
 </resources>
