@@ -18,7 +18,8 @@
         android:hint="What if ...?"
         android:id="@+id/edt_decision_question"
         android:inputType="textCapSentences"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:gravity="center_horizontal|center_vertical"/>
     <Button
         android:textAlignment="center"
         android:text="@string/add_decision"

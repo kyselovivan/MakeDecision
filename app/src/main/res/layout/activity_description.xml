@@ -14,6 +14,7 @@
         android:layout_weight="1"
         android:hint="@string/enter_description"
         android:inputType="textCapSentences"
+        android:gravity="center_vertical|center_horizontal"
         />
     <RatingBar
         android:id="@+id/raiting_bar"
