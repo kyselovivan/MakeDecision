@@ -22,8 +22,8 @@
     <string name="make_decision">MAKE DECISION</string>
     <string name="please_enter_description">Please enter description then click \"Add description\"</string>
     <string name="txtv_enter_question">Please enter the question:</string>
-    <string name="what_will_if_it_doesnt_happen">What will bi if it happens?</string>
+    <string name="what_will_if_it_doesnt_happen">What will be if it happens?</string>
     <string name="what_will_if_it_happens">What will be if it doesn\'t happen?</string>
-    <string name="what_wont_be_if_id_doesnt_happens">What won\'t be if it happens?</string>
-    <string name="what_wont_be_if_it_happens">What won\'t be if it doesn\'t happen?</string>
+    <string name="what_wont_be_if_id_doesnt_happens">What won\'t be if doesn\'t happen?</string>
+    <string name="what_wont_be_if_it_happens">What won\'t be if it happens?</string>
 </resources>
