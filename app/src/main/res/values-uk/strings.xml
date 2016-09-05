@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MakeDecision</string>
+    <string name="delete_all_descriptions">Видалити всі описи?</string>
+    <string name="about_us">Про нас</string>
+    <string name="add_decision">Додати рішення</string>
+    <string name="add_description">Додати опис</string>
+    <string name="cancel">Відмінв</string>
+    <string name="clear_decisions">Видалити рішення</string>
+    <string name="clear_description">Видалити опис</string>
+    <string name="delete_all">Видалити</string>
+    <string name="delete_all_decisions">Ви впевнені, що хочете видалити усі рішення?</string>
+    <string name="delete_description">Видалити це рішення?</string>
+    <string name="delete_single_description">Видалити цей опис?</string>
+    <string name="description_rait">Рейтинг</string>
+    <string name="description_was_added">Опис додано! можете додати ще)</string>
+    <string name="edit_description">Оновит опис</string>
+    <string name="edit_hint_description">Редагуйте опис, після натисніть \"Оновтит опис\"</string>
+    <string name="enter_description">Додайте опис, після натисніть \"Додати опис\"</string>
+    <string name="enter_question">Будь ласка введіть назву рішення!</string>
+    <string name="get_my_decisions">МОЇ РІШЕННЯ</string>
+    <string name="make_decision">ПРИЙНЯТИ РІШЕННЯ</string>
+    <string name="please_enter_description">Будь ласка введіть опис, після натисніть \"Додати опис\"</string>
+    <string name="txtv_enter_question">"Будь ласка введіть питання: "</string>
+    <string name="what_will_if_it_doesnt_happen">Що буде, якщо цього не трапиться?</string>
+    <string name="what_will_if_it_happens">Що буде, якщо це трапиться?</string>
+    <string name="what_wont_be_if_id_doesnt_happens">Чого не відбудеться, якщо цього не трапиться?</string>
+    <string name="what_wont_be_if_it_happens">Чого не відбудеться, якщо це трапиться?</string>
+</resources>
