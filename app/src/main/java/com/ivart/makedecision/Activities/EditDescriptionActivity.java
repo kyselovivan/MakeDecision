@@ -35,9 +35,13 @@ public class EditDescriptionActivity extends Activity {
         final RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
                 .equalTo("id",descriptionId)
                 .findAll();
+        DecisionDescription textToEdit = realm.where(DecisionDescription.class).equalTo("id",descriptionId).findFirst();
+        String tempText = textToEdit.getDescriptionText();
         btnEditDescription = (Button)findViewById(R.id.btn_edit_description);
         editTextDescription = (EditText)findViewById(R.id.edt_edit_decision_description);
         editRaitBar = (RatingBar)findViewById(R.id.edit_raiting_bar);
+
+        editTextDescription.setText(tempText);
 
         btnEditDescription.setOnClickListener(new View.OnClickListener() {
             @Override
