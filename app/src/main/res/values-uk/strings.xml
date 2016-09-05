@@ -26,5 +26,5 @@
     <string name="what_will_if_it_happens">Що буде, якщо це трапиться?</string>
     <string name="what_wont_be_if_id_doesnt_happens">Чого не відбудеться, якщо цього не трапиться?</string>
     <string name="what_wont_be_if_it_happens">Чого не відбудеться, якщо це трапиться?</string>
-    <string name="hint_enter_the_question">Введіть цікавляче вас питання або проблему...</string>
+    <string name="hint_enter_the_question">Введіть цікавляче вас питання\n або проблему...</string>
 </resources>

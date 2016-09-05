@@ -26,5 +26,5 @@
     <string name="what_will_if_it_happens">What will be if it happens?</string>
     <string name="what_wont_be_if_id_doesnt_happens">What won\'t be if doesn\'t happen?</string>
     <string name="what_wont_be_if_it_happens">What won\'t be if it happens?</string>
-    <string name="hint_enter_the_question">Enter the question or a name of problem...</string>
+    <string name="hint_enter_the_question">Enter the question\n or a name of problem...</string>
 </resources>
