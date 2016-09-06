@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MakeDecision</string>
+    <string name="add_decision">Add decision</string>
+    <string name="about_us">About us</string>
+    <string name="add_description">Add description</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear_decisions">Delete decision</string>
+    <string name="clear_description">Delete description</string>
+    <string name="delete_all">Delete all</string>
+    <string name="delete_all_decisions">Are you sure you want to delete all decisions?</string>
+    <string name="delete_all_descriptions">Delete all descriptions?</string>
+    <string name="delete_description">Delete this decision?</string>
+    <string name="delete_single_description">Delete this description?</string>
+    <string name="description_rait">Raiting</string>
+    <string name="description_was_added">Description added! You can add another one)</string>
+    <string name="edit_description">Update description</string>
+    <string name="edit_hint_description">Edit description then click \"Update description\"</string>
+    <string name="enter_description">Add description then click \"Add description\"</string>
+    <string name="enter_question">Please enter the name of decision!</string>
+    <string name="get_my_decisions">MY DECISIONS</string>
+    <string name="make_decision">MAKE DECISION</string>
+    <string name="please_enter_description">Please enter description then click \"Add description\"</string>
+    <string name="txtv_enter_question">Please enter the question:</string>
+    <string name="what_will_if_it_doesnt_happen">What will be if it doesn\'t happen?</string>
+    <string name="what_will_if_it_happens">What will be if it happens?</string>
+    <string name="what_wont_be_if_id_doesnt_happens">What won\'t be if doesn\'t happen?</string>
+    <string name="what_wont_be_if_it_happens">What won\'t be if it happens?</string>
+    <string name="hint_enter_the_question">Enter the question\n or a name of problem...</string>
+</resources>

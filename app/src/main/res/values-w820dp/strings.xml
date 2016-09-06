@@ -10,6 +10,9 @@
     <string name="what_will_if_it_happens">Что произойдет если это случиться?</string>
     <string name="what_will_if_it_doesnt_happen">Что произойдет если это не случится?</string>
     <string name="what_wont_be_if_it_happens">Что не произойдет если это случится?</string>
+    <string name="what_wont_be_if_id_doesnt_happens">Что не произойдет если это не случится?</string>
+    <string name="enter_description">Напишите описание затем нажмите \"Добавить\" \n для сохранения в базу данных...</string>
+    <string name="add_description">Добавить описание</string>
     <string name="enter_description">Напишите описание затем нажмите \"Добавить\"</string>
     <string name="add_description">Добавить</string>
     <string name="description_was_added">Описание добавлено! Можете добавить ещё)</string>
@@ -24,4 +27,5 @@
     <string name="delete_single_description">Удалить это описание ?</string>
     <string name="edit_description">Обновить описание</string>
     <string name="edit_hint_description">Редактируйте описание после нажмите \"Обновить описание\"</string>
+    <string name="hint_enter_the_question">Введите интересующий вас вопрос\n или проблему...</string>
 </resources>
