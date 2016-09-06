@@ -3,11 +3,9 @@ package com.ivart.makedecision.Adapters;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.Model.DecisionDescription;
 import com.ivart.makedecision.R;
 

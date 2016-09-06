@@ -1,7 +1,7 @@
 package com.ivart.makedecision.Activities;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,13 +11,12 @@ import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.ivart.makedecision.BaseApplication;
-import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.Model.DecisionDescription;
 import com.ivart.makedecision.R;
 
 import io.realm.Realm;
 
-public class DescriptionActivity extends AppCompatActivity implements View.OnClickListener {
+public class DescriptionActivity extends Activity implements View.OnClickListener {
 
     EditText description;
     Button addDescription;
@@ -94,4 +93,5 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         description.getText().clear();
         Toast.makeText(DescriptionActivity.this, R.string.description_was_added, Toast.LENGTH_LONG).show();
     }
+
 }
