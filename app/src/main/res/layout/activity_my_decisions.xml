@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/theme_purple_background"
     android:orientation="vertical">
 
     <ListView
@@ -12,7 +13,8 @@
     <Button
         android:text="@string/clear_decisions"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="5"
+        android:layout_height="74dp"
+        android:textColor="@color/text_light"
+        android:background="@color/theme_purple_primary"
         android:id="@+id/btn_clear_decisions"/>
 </LinearLayout>

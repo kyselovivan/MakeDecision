@@ -18,7 +18,7 @@ import com.ivart.makedecision.R;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-public class EditDescriptionListActivity extends Activity {
+public class EditDescriptionListActivity extends Activity  {
 
     Long decisionId;
     int square;

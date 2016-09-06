@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/theme_green_background"
     tools:context="com.ivart.makedecision.Activities.MakeDecisionActivity">
     <TextView
         android:text="@string/txtv_enter_question"
+        android:textColor="@color/text_dark"
         android:layout_width="match_parent"
         android:layout_height="81dp"
         android:textAlignment="center"
@@ -25,6 +27,8 @@
     <Button
         android:textAlignment="center"
         android:text="@string/add_decision"
+        android:textSize="12dp"
+        android:textColor="@color/text_dark"
         android:layout_width="match_parent"
         android:layout_height="95dp"
         android:id="@+id/btn_add_decision" />
