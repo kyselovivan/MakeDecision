@@ -1,6 +1,5 @@
 package com.ivart.makedecision.Activities;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
@@ -40,24 +39,32 @@ public class SquareActivity extends Activity implements View.OnClickListener {
     }
 
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_will_if_it_happens:
-                getWindow().setExitTransition(new Explode());
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setExitTransition(new Explode());
+                }
                 startDescriptionActivity(decisionId,1);
                 break;
             case R.id.btn_will_if_it_doesnt:
-                getWindow().setExitTransition(new Explode());
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setExitTransition(new Explode());
+                }
                 startDescriptionActivity(decisionId,2);
                 break;
             case R.id.btn_wont_if_it_happens:
-                getWindow().setExitTransition(new Explode());
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setExitTransition(new Explode());
+                }
                 startDescriptionActivity(decisionId,3);
                 break;
             case R.id.btn_wont_if_it_doesnt:
-                getWindow().setExitTransition(new Explode());
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setExitTransition(new Explode());
+                }
                 startDescriptionActivity(decisionId,4);
                 break;
         }

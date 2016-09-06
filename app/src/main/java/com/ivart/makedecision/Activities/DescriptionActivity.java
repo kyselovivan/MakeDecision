@@ -93,4 +93,5 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
         description.getText().clear();
         Toast.makeText(DescriptionActivity.this, R.string.description_was_added, Toast.LENGTH_LONG).show();
     }
+
 }
