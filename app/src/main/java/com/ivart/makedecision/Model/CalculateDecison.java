@@ -22,9 +22,10 @@ public class CalculateDecison {
         realm = Realm.getDefaultInstance();
     }
 
-    public float getSummaryRaiting(){
+
+    public float getSummaryRaitingByDecisionId(long id){
         float temp = 0;
-        RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class).findAll();
+        RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class).equalTo("decisionId",id).findAll();
         for(int i=0;i<results.size();i++){
             temp += results.get(i).getRaiting();
         }

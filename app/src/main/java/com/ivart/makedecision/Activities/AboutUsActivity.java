@@ -18,6 +18,7 @@ public class AboutUsActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
         calculate = new CalculateDecison();
-        Toast.makeText(this,""+calculate.getSummaryRaiting(),Toast.LENGTH_LONG).show();
+        long item = 147325194612700L;
+        Toast.makeText(this,""+calculate.getSummaryRaitingByDecisionId(item),Toast.LENGTH_LONG).show();
     }
 }
