@@ -18,18 +18,16 @@ public class CalculateDecison {
     long whatWillBeIfItDoesntHappen;
     long whatWontBeIfItHappens;
     long whatWontBeIfItDoesntHappen;
-
     public CalculateDecison() {
         realm = Realm.getDefaultInstance();
     }
 
-    public void getSummaryRaiting(){
+    public float getSummaryRaiting(){
+        float temp = 0;
         RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class).findAll();
         for(int i=0;i<results.size();i++){
-            DecisionDescription temp = results.get(i);
-            Log.d("",temp.toString());
+            temp += results.get(i).getRaiting();
         }
+        return temp;
     }
-
-
 }
