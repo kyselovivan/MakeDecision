@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import com.ivart.makedecision.Adapters.DecisionListAdapter;
 import com.ivart.makedecision.Model.Decision;
+import com.ivart.makedecision.Model.DecisionDescription;
 import com.ivart.makedecision.R;
 
 import io.realm.Realm;
@@ -78,11 +79,14 @@ public class MyDecisionsActivity extends Activity {
                 .setPositiveButton(R.string.delete_all, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        final RealmResults<Decision> results = realm.where(Decision.class).findAll();
+                        final RealmResults<Decision> resultsDecision = realm.where(Decision.class).findAll();
+                        final RealmResults<DecisionDescription> resultsDecisionDescriptions =
+                                realm.where(DecisionDescription.class).findAll();
                         realm.executeTransaction(new Realm.Transaction() {
                             @Override
                             public void execute(Realm realm) {
-                                results.deleteAllFromRealm();
+                                resultsDecision.deleteAllFromRealm();
+                                resultsDecisionDescriptions.deleteAllFromRealm();
                             }
                         });
                     }
