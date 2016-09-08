@@ -31,4 +31,16 @@ public class CalculateDecison {
         }
         return temp;
     }
+
+    public double getRaitingBySquare(long id, int square){
+        float temp = 0;
+        RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
+                .equalTo("decisionId",id)
+                .equalTo("square",square).findAll();
+        for(int i=0;i<results.size();i++){
+            temp += results.get(i).getRaiting();
+        }
+        float result = temp*100/getSummaryRaitingByDecisionId(id);
+        return (double) Math.round(result * 100) / 100;
+    }
 }
