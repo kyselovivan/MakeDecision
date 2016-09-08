@@ -3,10 +3,13 @@ package com.ivart.makedecision.Activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.ivart.makedecision.Model.CalculateDecison;
 import com.ivart.makedecision.R;
 
 public class DecisionEditActivity extends Activity implements View.OnClickListener{
@@ -63,5 +66,24 @@ public class DecisionEditActivity extends Activity implements View.OnClickListen
         secondSquare.setOnClickListener(this);
         thirdSquare.setOnClickListener(this);
         fourthSquare.setOnClickListener(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_action_bar, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.calculate) {
+            CalculateDecison calculate = new CalculateDecison();
+            Toast.makeText(this,""+calculate.getSummaryRaitingByDecisionId(decisionId),Toast.LENGTH_LONG).show();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
