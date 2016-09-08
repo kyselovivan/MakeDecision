@@ -82,6 +82,7 @@ public class DecisionEditActivity extends Activity implements View.OnClickListen
         if (id == R.id.calculate) {
             CalculateDecison calculate = new CalculateDecison();
             Toast.makeText(this,""+calculate.getSummaryRaitingByDecisionId(decisionId),Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Square raiting: "+calculate.getRaitingBySquare(decisionId,1),Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);
