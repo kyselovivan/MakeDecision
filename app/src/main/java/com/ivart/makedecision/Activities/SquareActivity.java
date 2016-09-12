@@ -89,7 +89,6 @@ public class SquareActivity extends Activity implements View.OnClickListener {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_action_bar, menu);
         return true;
     }
@@ -108,8 +107,6 @@ public class SquareActivity extends Activity implements View.OnClickListener {
             intent.putExtra("results",results);
             startActivity(intent);
 
-//            Toast.makeText(this,"Total raiting: "+calculate.getSummaryRaitingByDecisionId(decisionId),Toast.LENGTH_SHORT).show();
-//            Toast.makeText(this,"Square raiting: "+calculate.getRaitingBySquare(decisionId,1),Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);
