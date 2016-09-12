@@ -1,6 +1,7 @@
 package com.ivart.makedecision.Activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 
 public class PieChartActivity extends Activity {
 
-    private float[] yData = {10, 20, 30, 40};
+    private float[] yData;
 
     FrameLayout mainActivity;
     PieChart mChart;
@@ -30,6 +31,12 @@ public class PieChartActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pie_chart);
+        Intent intent = getIntent();
+        double[] results = intent.getDoubleArrayExtra("results");
+        yData = new float[results.length];
+        for(int i=0;i<results.length;i++){
+            yData[i] = (float)results[i];
+        }
         mainActivity = (FrameLayout) findViewById(R.id.activity_pie_chart);
         mChart = (PieChart) findViewById(R.id.myPieChart);
 
@@ -44,6 +51,7 @@ public class PieChartActivity extends Activity {
         mChart.setRotationEnabled(true);
         mChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
         mChart.animateX(1400, Easing.EasingOption.EaseInOutQuad);
+        mChart.setBackgroundColor(Color.LTGRAY);
 
         addData();
     }
@@ -51,7 +59,9 @@ public class PieChartActivity extends Activity {
     private void addData() {
         ArrayList<PieEntry> yVals1 = new ArrayList<>();
         for (int i = 0; i < yData.length; i++) {
-            yVals1.add(new PieEntry(yData[i], i));
+            if(yData[i]!= 0) {
+                yVals1.add(new PieEntry(yData[i], i));
+            }
         }
 
         ArrayList<Integer> colors = new ArrayList<>();
