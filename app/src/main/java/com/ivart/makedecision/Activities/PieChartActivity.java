@@ -68,8 +68,8 @@ public class PieChartActivity extends Activity {
         ArrayList<String> questions = new ArrayList<>();
         questions.add(getBaseContext().getString(R.string.what_will_if_it_happens));
         questions.add(getBaseContext().getString(R.string.what_will_if_it_doesnt_happen));
-        questions.add(getBaseContext().getString(R.string.what_wont_be_if_it_happens));
         questions.add(getBaseContext().getString(R.string.what_wont_be_if_id_doesnt_happens));
+        questions.add(getBaseContext().getString(R.string.what_wont_be_if_it_happens));
 
 
         colors.add(Color.GREEN);
