@@ -7,14 +7,18 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.ivart.makedecision.R;
 
@@ -23,7 +27,7 @@ import java.util.ArrayList;
 public class PieChartActivity extends Activity {
 
     private float[] yData;
-
+    ArrayList<String> questions;
     FrameLayout mainActivity;
     PieChart mChart;
 
@@ -54,6 +58,21 @@ public class PieChartActivity extends Activity {
         mChart.setBackgroundColor(Color.LTGRAY);
 
         addData();
+
+        mChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+                if(e==null) return;
+                else{
+                    Toast.makeText(PieChartActivity.this,""+questions.get((int)e.getData()),Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
     }
 
     private void addData() {
@@ -65,7 +84,7 @@ public class PieChartActivity extends Activity {
         }
 
         ArrayList<Integer> colors = new ArrayList<>();
-        ArrayList<String> questions = new ArrayList<>();
+        questions = new ArrayList<>();
         questions.add(getBaseContext().getString(R.string.what_will_if_it_happens));
         questions.add(getBaseContext().getString(R.string.what_will_if_it_doesnt_happen));
         questions.add(getBaseContext().getString(R.string.what_wont_be_if_id_doesnt_happens));
