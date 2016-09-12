@@ -14,7 +14,7 @@
     <string name="what_wont_be_if_id_doesnt_happens">Что не произойдет если это не случится?</string>
     <string name="enter_description">Напишите описание затем нажмите \"Добавить\" \n для добавления в базу данных...</string>
     <string name="add_description">Добавить</string>
-    <string name="description_was_added">Описание добавлено! Можете добавить ещё)</string>
+    <string name="description_was_added">Описание добавлено! Можете добавить ещё в этот квадрат либо заполнять другие квадраты! Также вы можете рассчитать решение нашав \"Рассчитать\"!)</string>
     <string name="please_enter_description">Пожалуйста введите описание затем нажмите \"Добавить описание\"</string>
     <string name="aboutUs">MakeDecision версия 1.0</string>
     <string name="delete_all_decisions">Вы хотите удалить все решения?</string>

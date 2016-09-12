@@ -13,7 +13,7 @@
     <string name="delete_description">Видалити це рішення?</string>
     <string name="delete_single_description">Видалити цей опис?</string>
     <string name="description_rait">Рейтинг</string>
-    <string name="description_was_added">Опис додано! можете додати ще)</string>
+    <string name="description_was_added">Опис додано! можете додати ще в цей квадрат або заповняти інші) Також ви можете розрахувати рішення натиснув \"Розрахувати\"!</string>
     <string name="edit_description">Оновити опис</string>
     <string name="edit_hint_description">Редагуйте опис, після натисніть \"Оновтити опис\"</string>
     <string name="enter_description">Додайте опис, після натисніть \"Додати опис\"</string>
