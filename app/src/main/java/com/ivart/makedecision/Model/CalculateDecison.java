@@ -14,10 +14,6 @@ import io.realm.RealmResults;
 
 public class CalculateDecison {
     Realm realm;
-    long whatWillBeIfItHappens;
-    long whatWillBeIfItDoesntHappen;
-    long whatWontBeIfItHappens;
-    long whatWontBeIfItDoesntHappen;
     public CalculateDecison() {
         realm = Realm.getDefaultInstance();
     }
@@ -40,7 +36,7 @@ public class CalculateDecison {
         for(int i=0;i<results.size();i++){
             temp += results.get(i).getRaiting();
         }
-        float result = temp*100/getSummaryRaitingByDecisionId(id);
-        return (double) Math.round(result * 100) / 100;
+        double result = temp*100/getSummaryRaitingByDecisionId(id);
+        return result;
     }
 }

@@ -17,8 +17,6 @@ public class AboutUsActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
-        calculate = new CalculateDecison();
-        long item = 147325194612700L;
-        Toast.makeText(this,""+calculate.getSummaryRaitingByDecisionId(item),Toast.LENGTH_LONG).show();
+
     }
 }

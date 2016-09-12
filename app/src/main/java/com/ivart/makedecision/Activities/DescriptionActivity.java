@@ -82,7 +82,10 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
                     if (editSquare != 0) {
                         saveIntoDatabase(editId, editSquare, text, raiting);
                         DescriptionActivity.this.finish();
-                    } else saveIntoDatabase(decisionId, square, text, raiting);
+                    } else {
+                        saveIntoDatabase(decisionId, square, text, raiting);
+                        DescriptionActivity.this.finish();
+                    }
                 }
                 break;
         }
