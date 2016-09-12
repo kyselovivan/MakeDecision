@@ -34,6 +34,7 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
+ //       changeStyleActivity();
         Intent intent = getIntent();
         decisionId = intent.getLongExtra("idDecision", 0L);
         editId = intent.getLongExtra("editDecisionId",0L);
@@ -47,6 +48,23 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
         setOnClick();
 
     }
+
+//    private void changeStyleActivity() {
+//        switch (square) {
+//            case 1:
+//                addDescription.setBackground(Drawables.getSelectableDrawableFor(Color.parseColor("#f08080")));
+//                break;
+//            case 2:
+//                description.setBackground(Drawables.getSelectableDrawableFor(Integer.parseInt("#f08080")));
+//                break;
+//            case 3:
+//                description.setBackground(Drawables.getSelectableDrawableFor(Integer.parseInt("#9bfff4")));
+//                break;
+//            default:
+//                description.setBackground(Drawables.getSelectableDrawableFor(Integer.parseInt("#b388ff")));
+//                break;
+//        }
+//    }
 
     private void setOnClick() {
         addDescription.setOnClickListener(this);

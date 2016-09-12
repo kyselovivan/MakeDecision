@@ -1,12 +1,74 @@
+
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- inherit from the material theme -->
     <style name="AppTheme" parent="android:Theme.Material" tools:targetApi="lollipop">
-        <!-- Main theme colors -->
-        <!--   your app branding color for the app bar -->
-        <item name="android:colorPrimary">@color/colorPrimary</item>
-        <!--   darker variant for the status bar and contextual app bars -->
-        <item name="android:colorPrimaryDark">@color/topeka_primary_dark</item>
-        <!--   theme UI controls like checkboxes and text fields -->
-        <item name="android:colorAccent">@color/colorAccent</item>
+    <!-- Main theme colors -->
+    <!--   your app branding color for the app bar -->
+    <item name="android:colorPrimary">@color/colorPrimary</item>
+    <!--   darker variant for the status bar and contextual app bars -->
+    <item name="android:colorPrimaryDark">@color/topeka_primary_dark</item>
+    <!--   theme UI controls like checkboxes and text fields -->
+    <item name="android:colorAccent">@color/colorAccent</item>
     </style>
+
+
+
+    <style name="MakeDecision.Blue">
+        <item name="colorPrimary">@color/theme_blue_primary</item>
+        <item name="colorPrimaryDark">@color/theme_blue_primary</item>
+        <item name="android:textColorPrimary">@color/theme_blue_text</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">
+            @color/theme_blue_primary_dark
+        </item>
+        <item name="android:windowBackground">@color/theme_blue_background</item>
+        <item name="colorAccent">@color/theme_blue_accent</item>
+    </style>
+
+    <style name="MakeDecision.Green">
+        <item name="colorPrimary">@color/theme_green_primary</item>
+        <item name="colorPrimaryDark">@color/theme_green_primary</item>
+        <item name="android:textColorPrimary">@color/theme_green_text</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">
+            @color/theme_green_primary_dark
+        </item>
+        <item name="android:windowBackground">@color/theme_green_background</item>
+        <item name="colorAccent">@color/theme_green_accent</item>
+    </style>
+
+    <style name="MakeDecision.Purple">
+        <item name="colorPrimary">@color/theme_purple_primary</item>
+        <item name="colorPrimaryDark">@color/theme_purple_primary</item>
+        <item name="android:textColorPrimary">@color/theme_purple_text</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">
+            @color/theme_purple_primary_dark
+        </item>
+        <item name="android:windowBackground">@color/theme_purple_background</item>
+        <item name="colorAccent">@color/theme_purple_accent</item>
+    </style>
+
+    <style name="MakeDecision.Red">
+        <item name="colorPrimary">@color/theme_red_primary</item>
+        <item name="colorPrimaryDark">@color/theme_red_primary</item>
+        <item name="android:textColorPrimary">@color/theme_red_text</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">
+            @color/theme_red_primary_dark
+        </item>
+        <item name="android:windowBackground">@color/theme_red_background</item>
+        <item name="colorAccent">@color/theme_red_accent</item>
+    </style>
+
+    <style name="MakeDecision.Yellow">
+        <item name="colorPrimary">@color/theme_yellow_primary</item>
+        <item name="colorPrimaryDark">@color/theme_yellow_primary</item>
+        <item name="android:textColorPrimary">@color/theme_yellow_text</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">
+            @color/theme_yellow_primary_dark
+        </item>
+        <item name="android:windowBackground">@color/theme_yellow_background</item>
+        <item name="colorAccent">@color/theme_yellow_accent</item>
+    </style>
+
+    <style name="MakeDecision">yellow</style>
+
 </resources>
