@@ -25,6 +25,6 @@ public class BaseApplication extends Application {
                 .deleteRealmIfMigrationNeeded()
                 .build();
         Realm.setDefaultConfiguration(config);
-        productPrimaryKey = new AtomicLong(System.currentTimeMillis()*100);
+        productPrimaryKey = new AtomicLong(System.currentTimeMillis()*(int) Math.floor(Math.random() * 101));
     }
 }
