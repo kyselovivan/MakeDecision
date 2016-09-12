@@ -41,6 +41,6 @@ public class CalculateDecison {
             temp += results.get(i).getRaiting();
         }
         float result = temp*100/getSummaryRaitingByDecisionId(id);
-        return (double) Math.round(result * 100) / 100;
+        return result;
     }
 }
