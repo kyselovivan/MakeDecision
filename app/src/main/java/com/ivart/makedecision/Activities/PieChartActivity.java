@@ -34,8 +34,8 @@ public class PieChartActivity extends Activity {
         Intent intent = getIntent();
         double[] results = intent.getDoubleArrayExtra("results");
         yData = new float[results.length];
-        for(int i=0;i<results.length;i++){
-            yData[i] = (float)results[i];
+        for (int i = 0; i < results.length; i++) {
+            yData[i] = (float) results[i];
         }
         mainActivity = (FrameLayout) findViewById(R.id.activity_pie_chart);
         mChart = (PieChart) findViewById(R.id.myPieChart);
@@ -57,10 +57,10 @@ public class PieChartActivity extends Activity {
     }
 
     private void addData() {
-        ArrayList<PieEntry> yVals1 = new ArrayList<>();
+        ArrayList<PieEntry> yVals = new ArrayList<>();
         for (int i = 0; i < yData.length; i++) {
-            if(yData[i]!= 0) {
-                yVals1.add(new PieEntry(yData[i], i));
+            if (yData[i] != 0) {
+                yVals.add(new PieEntry(yData[i], i));
             }
         }
 
@@ -72,19 +72,17 @@ public class PieChartActivity extends Activity {
         questions.add(getBaseContext().getString(R.string.what_wont_be_if_id_doesnt_happens));
 
 
-
         colors.add(Color.GREEN);
         colors.add(Color.RED);
         colors.add(Color.BLUE);
         colors.add(Color.YELLOW);
 
-
         Legend l = mChart.getLegend();
-        l.setCustom(colors,questions);
+        l.setCustom(colors, questions);
         l.setPosition(Legend.LegendPosition.LEFT_OF_CHART);
         l.setTextSize(10.5F);
 
-        PieDataSet dataSet = new PieDataSet(yVals1,"Your Decision");
+        PieDataSet dataSet = new PieDataSet(yVals, "Your Decision");
         dataSet.setSliceSpace(3);
         dataSet.setSelectionShift(4);
 
