@@ -30,6 +30,7 @@ public class PieChartActivity extends Activity {
     ArrayList<String> questions;
     FrameLayout mainActivity;
     PieChart mChart;
+    Toast myToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
