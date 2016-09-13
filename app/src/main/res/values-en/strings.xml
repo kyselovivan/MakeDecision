@@ -29,4 +29,5 @@
     <string name="hint_enter_the_question">Enter the question\n or a name of problem...</string>
     <string name="calculate">Calculate</string>
     <string name="Розрахувати">Calculate</string>
+    <string name="edit_decision_name">Переименовать</string>
 </resources>
