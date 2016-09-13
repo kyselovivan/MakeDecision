@@ -27,6 +27,6 @@
     <string name="edit_hint_description">Редактируйте описание после нажмите \"Обновить описание\"</string>
     <string name="hint_enter_the_question">Введите интересующий вас вопрос\n или проблему...</string>
     <string name="calculate">Рассчитать</string>
-    <string name="edit_decision_name">Измениить название</string>
+    <string name="edit_decision_name">Измениить</string>
     <string name="delete_one">Удалить</string>
 </resources>

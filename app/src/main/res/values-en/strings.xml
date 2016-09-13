@@ -29,6 +29,6 @@
     <string name="hint_enter_the_question">Enter the question\n or a name of problem...</string>
     <string name="calculate">Calculate</string>
     <string name="Розрахувати">Calculate</string>
-    <string name="edit_decision_name">Rename</string>
-    <string name="delete_one">Delete</string>
+    <string name="edit_decision_name">Edit</string>
+    <string name="delete_one">Edit</string>
 </resources>
