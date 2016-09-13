@@ -18,8 +18,8 @@
     <string name="edit_hint_description">Edit description then click \"Update description\"</string>
     <string name="enter_description">Add description then click \"Add description\"</string>
     <string name="enter_question">Please enter the name of decision!</string>
-    <string name="get_my_decisions">MY DECISIONS</string>
-    <string name="make_decision">MAKE DECISION</string>
+    <string name="get_my_decisions">My decisions</string>
+    <string name="make_decision">Make decision</string>
     <string name="please_enter_description">Please enter description then click \"Add description\"</string>
     <string name="txtv_enter_question">Please enter the question:</string>
     <string name="what_will_if_it_doesnt_happen">What will be if it doesn\'t happen?</string>

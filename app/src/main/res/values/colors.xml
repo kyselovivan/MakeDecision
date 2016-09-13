@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#ffe100</color>
     <color name="colorPurple">#c29bff</color>
     <color name="colorRose">#ff6768</color>
     <color name="colorFiolet">#8470ff</color>
@@ -12,10 +12,10 @@
 
     <color name="touch_effect">#9ccc</color>
 
-    <color name="topeka_primary">#00bad2</color>
-    <color name="topeka_primary_dark">#00a3b8</color>
-    <color name="topeka_blank">#424242</color>
-    <color name="topeka_accent">#3F51B5</color>
+    <color name="md_primary">#00bad2</color>
+    <color name="md_primary_dark">#00a3b8</color>
+    <color name="md_blank">#424242</color>
+    <color name="md_accent">#3F51B5</color>
 
     <color name="text_light">@android:color/white</color>
     <color name="text_dark">#616161</color>

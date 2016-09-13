@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -75,6 +74,7 @@ public class PieChartActivity extends Activity {
         });
     }
 
+
     private void addData() {
         ArrayList<PieEntry> yVals = new ArrayList<>();
         for (int i = 0; i < yData.length; i++) {
@@ -118,5 +118,7 @@ public class PieChartActivity extends Activity {
         mChart.setData(pieData);
         mChart.highlightValues(null);
         mChart.invalidate();
+
+
     }
 }
