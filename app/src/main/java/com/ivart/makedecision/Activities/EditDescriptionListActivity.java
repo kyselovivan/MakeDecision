@@ -124,7 +124,7 @@ public class EditDescriptionListActivity extends Activity  {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 })
-                .setPositiveButton(R.string.delete_all, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.delete_one, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         final RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)

@@ -33,4 +33,5 @@
     <string name="calculate">Рассчитать</string>
     <string name="Розрахувати">Рассчитать</string>
     <string name="edit_decision_name">Переименовать</string>
+    <string name="delete_one">Удалить</string>
 </resources>

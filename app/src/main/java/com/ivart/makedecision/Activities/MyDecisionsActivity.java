@@ -106,18 +106,33 @@ public class MyDecisionsActivity extends Activity {
 
                     }
                 })
-                .setPositiveButton(R.string.delete_all, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.delete_one, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         realm.executeTransaction(new Realm.Transaction() {
                             @Override
                             public void execute(Realm realm) {
-                                RealmResults<Decision> results = realm.where(Decision.class).equalTo("id",id).findAll();
+                                RealmResults<Decision> results = realm.where(Decision.class).equalTo("id", id).findAll();
                                 results.deleteAllFromRealm();
                             }
                         });
                     }
+                })
+                .setNeutralButton(R.string.edit_decision_name, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
+                                Decision results = realm.where(Decision.class).equalTo("id", id).findFirst();
+                                Intent intent = new Intent(MyDecisionsActivity.this,MakeDecisionActivity.class);
+                                intent.putExtra("edititngId", results.getId());
+                                startActivity(intent);
+                            }
+                        });
+                    }
                 });
+
         dialog.create();
         dialog.show();
     }
