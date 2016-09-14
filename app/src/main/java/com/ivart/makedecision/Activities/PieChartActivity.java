@@ -57,7 +57,7 @@ public class PieChartActivity extends Activity {
         mChart.setRotationEnabled(true);
         mChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
         mChart.animateX(1400, Easing.EasingOption.EaseInOutQuad);
-        mChart.setBackgroundColor(Color.LTGRAY);
+        mChart.setBackgroundColor(Color.WHITE);
 
         addData();
 
