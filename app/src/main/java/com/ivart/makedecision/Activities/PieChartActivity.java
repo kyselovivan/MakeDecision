@@ -28,6 +28,7 @@ public class PieChartActivity extends Activity {
 
     private float[] yData;
     ArrayList<String> questions;
+    ArrayList<String> resultQuestion;
     FrameLayout mainActivity;
     PieChart mChart;
 
@@ -64,7 +65,7 @@ public class PieChartActivity extends Activity {
             public void onValueSelected(Entry e, Highlight h) {
                 if(e==null) return;
                 else{
-                    Toast.makeText(PieChartActivity.this,""+questions.get((int)e.getData()),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PieChartActivity.this,""+resultQuestion.get((int)e.getData()),Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -76,28 +77,35 @@ public class PieChartActivity extends Activity {
     }
 
     private void addData() {
-        ArrayList<PieEntry> yVals = new ArrayList<>();
-        for (int i = 0; i < yData.length; i++) {
-            if (yData[i] != 0) {
-                yVals.add(new PieEntry(yData[i], i));
-            }
-        }
-
         ArrayList<Integer> colors = new ArrayList<>();
+        ArrayList<PieEntry> yVals = new ArrayList<>();
         questions = new ArrayList<>();
-        questions.add(getBaseContext().getString(R.string.what_will_if_it_happens));
-        questions.add(getBaseContext().getString(R.string.what_will_if_it_doesnt_happen));
-        questions.add(getBaseContext().getString(R.string.what_wont_be_if_id_doesnt_happens));
-        questions.add(getBaseContext().getString(R.string.what_wont_be_if_it_happens));
-
 
         colors.add(Color.GREEN);
         colors.add(Color.RED);
-        colors.add(Color.BLUE);
         colors.add(Color.YELLOW);
+        colors.add(Color.BLUE);
+
+        questions.add(getBaseContext().getString(R.string.what_will_if_it_happens));
+        questions.add(getBaseContext().getString(R.string.what_will_if_it_doesnt_happen));
+        questions.add(getBaseContext().getString(R.string.what_wont_be_if_it_happens));
+        questions.add(getBaseContext().getString(R.string.what_wont_be_if_id_doesnt_happens));
+
+
+        ArrayList<Integer> resultColor = new ArrayList<>();
+        resultQuestion = new ArrayList<>();
+
+        for (int i = 0; i < yData.length; i++) {
+            if(yData[i]!=0){
+                yVals.add(new PieEntry(yData[i], i));
+                resultColor.add(colors.get(i));
+                resultQuestion.add(questions.get(i));
+            }
+        }
+
 
         Legend l = mChart.getLegend();
-        l.setCustom(colors, questions);
+        l.setCustom(resultColor, resultQuestion);
         l.setPosition(Legend.LegendPosition.LEFT_OF_CHART);
         l.setTextSize(10.5F);
 
@@ -105,8 +113,8 @@ public class PieChartActivity extends Activity {
         dataSet.setSliceSpace(3);
         dataSet.setSelectionShift(4);
 
-        colors.add(ColorTemplate.getHoloBlue());
-        dataSet.setColors(colors);
+
+        dataSet.setColors(resultColor);
 
         PieData pieData = new PieData(dataSet);
 
