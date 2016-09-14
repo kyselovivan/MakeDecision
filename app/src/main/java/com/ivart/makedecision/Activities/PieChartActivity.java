@@ -66,7 +66,7 @@ public class PieChartActivity extends Activity {
             public void onValueSelected(Entry e, Highlight h) {
                 if(e==null) return;
                 else{
-                    Toast.makeText(PieChartActivity.this,""+resultQuestion.get((int)e.getData()),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PieChartActivity.this,""+questions.get((int)e.getData()),Toast.LENGTH_SHORT).show();
                 }
             }
 
