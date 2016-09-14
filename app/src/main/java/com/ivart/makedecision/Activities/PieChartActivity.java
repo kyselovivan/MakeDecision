@@ -20,9 +20,12 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.R;
 
 import java.util.ArrayList;
+
+import io.realm.Realm;
 
 public class PieChartActivity extends Activity {
 
@@ -30,8 +33,9 @@ public class PieChartActivity extends Activity {
     ArrayList<String> questions;
     ArrayList<String> resultQuestion;
     FrameLayout mainActivity;
+    Realm realm;
     PieChart mChart;
-    Toast myToast;
+    String decisionName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,8 @@ public class PieChartActivity extends Activity {
         setContentView(R.layout.activity_pie_chart);
         Intent intent = getIntent();
         double[] results = intent.getDoubleArrayExtra("results");
+        Long id = intent.getLongExtra("decisionId",0);
+        decisionName = getDecisionName(id);
         yData = new float[results.length];
         for (int i = 0; i < results.length; i++) {
             yData[i] = (float) results[i];
@@ -47,7 +53,7 @@ public class PieChartActivity extends Activity {
         mChart = (PieChart) findViewById(R.id.myPieChart);
 
         mChart.setUsePercentValues(true);
-        mChart.setDescription("Your Decision");
+        mChart.setDescription(decisionName);
 
         mChart.setDrawHoleEnabled(true);
         mChart.setHoleRadius(5);
@@ -127,5 +133,18 @@ public class PieChartActivity extends Activity {
         mChart.setData(pieData);
         mChart.highlightValues(null);
         mChart.invalidate();
+    }
+
+    public String getDecisionName(final long id){
+        final StringBuilder name = new StringBuilder();
+        realm = Realm.getDefaultInstance();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                Decision result = realm.where(Decision.class).equalTo("id", id).findFirst();
+                name.append(result.getmDecisionName());
+            }
+        });
+        return name.toString();
     }
 }

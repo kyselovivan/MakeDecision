@@ -105,6 +105,7 @@ public class SquareActivity extends Activity implements View.OnClickListener {
             double[] results = {ifItHapp,ifItDoesnt,wontItItHapp,wontItItDoesnt};
             Intent intent = new Intent(this, PieChartActivity.class);
             intent.putExtra("results",results);
+            intent.putExtra("decisionId",decisionId);
             startActivity(intent);
 
         }

@@ -87,6 +87,7 @@ public class DecisionEditActivity extends Activity implements View.OnClickListen
             double[] results = {ifItHapp,ifItDoesnt,wontItItHapp,wontItItDoesnt};
             Intent intent = new Intent(this, PieChartActivity.class);
             intent.putExtra("results",results);
+            intent.putExtra("decisionId",decisionId);
             startActivity(intent);
         }
 
