@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">MakeDecision</string>
+
     <string name="make_decision">Принять решение</string>
     <string name="get_my_decisions">Мои решения</string>
     <string name="about_us">О программе</string>
@@ -7,14 +8,15 @@
     <string name="add_decision">Добавить решение</string>
     <string name="enter_question">Пожалуйста, введите вопрос!</string>
     <string name="clear_decisions">Удалить решения</string>
-    <string name="what_will_if_it_happens">Что произойдет если это случиться?</string>
+    <string name="what_will_if_it_happens">Что произойдет если это случится?</string>
     <string name="what_will_if_it_doesnt_happen">Что произойдет если это не случится?</string>
     <string name="what_wont_be_if_it_happens">Что не произойдет если это случится?</string>
     <string name="what_wont_be_if_id_doesnt_happens">Что не произойдет если это не случится?</string>
-    <string name="enter_description">Напишите описание затем нажмите \"Добавить\" \n для добавления в базу данных...</string>
+    <string name="enter_description">Добавьте описание затем\n кликните \"Добавить\"</string>
     <string name="add_description">Добавить</string>
     <string name="description_was_added">Описание добавлено! Можете добавить ещё в этот квадрат либо заполнять другие квадраты! Также вы можете рассчитать решение нажав \"Рассчитать\"!)</string>
     <string name="please_enter_description">Пожалуйста введите описание затем нажмите \"Добавить описание\"</string>
+    <string name="aboutUs">MakeDecision версия 1.0</string>
     <string name="delete_all_decisions">Вы хотите удалить все решения?</string>
     <string name="cancel">Отмена</string>
     <string name="delete_all">Удалить</string>
@@ -24,8 +26,12 @@
     <string name="delete_all_descriptions">Удалить все описания ?</string>
     <string name="delete_single_description">Удалить это описание ?</string>
     <string name="edit_description">Обновить описание</string>
-    <string name="edit_hint_description">Редактируйте описание после нажмите \"Обновить описание\"</string>
-    <string name="hint_enter_the_question">Введите интересующий вас вопрос\n или проблему...</string>
+    <string name="edit_hint_description">Редактируйте описание после\n нажмите \"Обновить описание\"</string>
+    <string name="back">back</string>
+    <string name="transition_toolbar">toolbar</string>
+    <string name="hint_enter_the_question">Введите интересующий вас\n вопрос или проблему...</string>
     <string name="calculate">Рассчитать</string>
+    <string name="Розрахувати">Рассчитать</string>
     <string name="action_settings">action_settings</string>
+
 </resources>
