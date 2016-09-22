@@ -16,7 +16,7 @@
     <string name="description_was_added">Description added! You can add another one in this square or fill another square! Also you can calculate your decision clicked \"Calculate\"!</string>
     <string name="edit_description">Update description</string>
     <string name="edit_hint_description">Edit description then click \"Update description\"</string>
-    <string name="enter_description">Add description then click \"Add description\"</string>
+    <string name="enter_description">Add description then click\n \"Add description\"</string>
     <string name="enter_question">Please enter the name of decision!</string>
     <string name="get_my_decisions">My decisions</string>
     <string name="make_decision">Make decision</string>
