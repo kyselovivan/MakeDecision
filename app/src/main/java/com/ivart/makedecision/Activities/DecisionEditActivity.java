@@ -3,13 +3,10 @@ package com.ivart.makedecision.Activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.ivart.makedecision.Model.CalculateDecison;
 import com.ivart.makedecision.R;
 
 public class DecisionEditActivity extends Activity implements View.OnClickListener{
@@ -68,29 +65,22 @@ public class DecisionEditActivity extends Activity implements View.OnClickListen
         fourthSquare.setOnClickListener(this);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_action_bar, menu);
-        return true;
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.calculate) {
-            CalculateDecison calculate = new CalculateDecison();
-            double ifItHapp = calculate.getRaitingBySquare(decisionId,1);
-            double ifItDoesnt = calculate.getRaitingBySquare(decisionId,2);
-            double wontItItHapp = calculate.getRaitingBySquare(decisionId,3);
-            double wontItItDoesnt = calculate.getRaitingBySquare(decisionId,4);
-            double[] results = {ifItHapp,ifItDoesnt,wontItItHapp,wontItItDoesnt};
-            Intent intent = new Intent(this, PieChartActivity.class);
-            intent.putExtra("results",results);
-            intent.putExtra("decisionId",decisionId);
-            startActivity(intent);
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//
+//        if (id == R.id.calculate) {
+//            CalculateDecison calculate = new CalculateDecison();
+//            double ifItHapp = calculate.getRaitingBySquare(decisionId,1);
+//            double ifItDoesnt = calculate.getRaitingBySquare(decisionId,2);
+//            double wontItItHapp = calculate.getRaitingBySquare(decisionId,3);
+//            double wontItItDoesnt = calculate.getRaitingBySquare(decisionId,4);
+//            double[] results = {ifItHapp,ifItDoesnt,wontItItHapp,wontItItDoesnt};
+//            Intent intent = new Intent(this, PieChartActivity.class);
+//            intent.putExtra("results",results);
+//            intent.putExtra("decisionId",decisionId);
+//            startActivity(intent);
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 }

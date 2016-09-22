@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorSky"
-              android:weightSum="1">
+              android:orientation="vertical" android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="1"
+              android:background="@color/primary_dark"
+              >
 
     <TextView
-        android:text="@string/aboutMethod"
+        android:text="@string/aboutUs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/text_dark"
+        android:textColor="@color/primary_light"
         android:layout_weight="0.1"
         android:textAlignment="center"
         android:elevation="2dp"
-        android:gravity="center_vertical"/>
+        android:gravity="center_vertical"
+        />
 </LinearLayout>

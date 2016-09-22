@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:hint="@string/edit_hint_description"
+        android:textColorHint="@color/primary_light"
         android:inputType="textCapSentences"
         android:layout_gravity="center_vertical|center_horizontal"
         />
