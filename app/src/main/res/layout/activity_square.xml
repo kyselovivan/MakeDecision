@@ -16,9 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="@color/theme_green_text"
-            android:background="@color/colorGreenLight"
-            android:textSize="10sp"/>
+            android:textColor="@color/primary_light"
+            android:background="@drawable/bkg"
+            android:textSize="12sp"/>
 
         <Button
             android:text="@string/what_will_if_it_doesnt_happen"
@@ -26,8 +26,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/colorRose"
-            android:textSize="10sp"/>
+            android:background="@drawable/bkg"
+            android:textColor="@color/primary_light"
+            android:textSize="12sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -42,17 +43,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="@color/text_dark"
-            android:background="@color/colorSky"
-            android:textSize="10sp"/>
+            android:background="@drawable/bkg"
+            android:textColor="@color/primary_light"
+            android:textSize="12sp"/>
+
         <Button
             android:text="@string/what_wont_be_if_id_doesnt_happens"
             android:id="@+id/btn_wont_if_it_doesnt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/colorFiolet"
-            android:textSize="10sp"/>/>
+            android:background="@drawable/bkg"
+            android:textColor="@color/primary_light"
+            android:textSize="12sp"/>/>
     </LinearLayout>
 
 </LinearLayout>

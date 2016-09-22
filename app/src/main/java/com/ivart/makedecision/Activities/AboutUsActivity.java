@@ -2,7 +2,6 @@ package com.ivart.makedecision.Activities;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.ivart.makedecision.Model.CalculateDecison;
 import com.ivart.makedecision.R;
@@ -17,6 +16,7 @@ public class AboutUsActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
+
 
     }
 }

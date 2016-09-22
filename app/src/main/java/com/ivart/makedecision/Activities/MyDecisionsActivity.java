@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.ivart.makedecision.Adapters.DecisionListAdapter;
@@ -23,7 +22,6 @@ import io.realm.RealmResults;
  */
 public class MyDecisionsActivity extends Activity {
 
-    Button clearDecisions;
     Realm realm;
     ListView decisionList;
 
@@ -31,7 +29,6 @@ public class MyDecisionsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_decisions);
-        clearDecisions = (Button) findViewById(R.id.btn_clear_decisions);
         realm = Realm.getDefaultInstance();
         decisionList = (ListView) findViewById(R.id.listv_decision_list);
         RealmResults<Decision> results = realm.where(Decision.class).findAll();
@@ -58,12 +55,6 @@ public class MyDecisionsActivity extends Activity {
             }
         });
 
-        clearDecisions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDeleteAllDeccisionsDialog();
-            }
-        });
     }
 
     public void showDeleteAllDeccisionsDialog() {
@@ -122,4 +113,7 @@ public class MyDecisionsActivity extends Activity {
         dialog.show();
     }
 
+    public void onClick(View view) {
+        showDeleteAllDeccisionsDialog();
+    }
 }

@@ -32,4 +32,6 @@
     <string name="hint_enter_the_question">Введите интересующий вас вопрос\n или проблему...</string>
     <string name="calculate">Рассчитать</string>
     <string name="Розрахувати">Рассчитать</string>
+    <string name="action_settings">action_settings</string>
+
 </resources>
