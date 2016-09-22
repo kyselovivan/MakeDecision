@@ -25,7 +25,7 @@
                 android:background="@drawable/bkg"
                 android:text="@string/what_will_if_it_happens"
                 android:textColor="@color/primary_light"
-                android:textSize="12sp"/>
+                android:textSize="@dimen/category_item_text_size"/>
 
             <Button
                 android:id="@+id/btn_will_if_it_doesnt"
@@ -35,7 +35,7 @@
                 android:background="@drawable/bkg"
                 android:text="@string/what_will_if_it_doesnt_happen"
                 android:textColor="@color/primary_light"
-                android:textSize="12sp"/>
+                android:textSize="@dimen/category_item_text_size"/>
         </LinearLayout>
 
         <LinearLayout
@@ -52,7 +52,7 @@
                 android:background="@drawable/bkg"
                 android:text="@string/what_wont_be_if_it_happens"
                 android:textColor="@color/primary_light"
-                android:textSize="12sp"/>
+                android:textSize="@dimen/category_item_text_size"/>
 
             <Button
                 android:id="@+id/btn_wont_if_it_doesnt"
@@ -62,7 +62,7 @@
                 android:background="@drawable/bkg"
                 android:text="@string/what_wont_be_if_id_doesnt_happens"
                 android:textColor="@color/primary_light"
-                android:textSize="12sp"/>/>
+                android:textSize="@dimen/category_item_text_size"/>
         </LinearLayout>
     </LinearLayout>
 
