@@ -7,7 +7,7 @@
               >
 
     <TextView
-        android:text="@string/aboutUs"
+        android:text="@string/aboutMethod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/primary_light"

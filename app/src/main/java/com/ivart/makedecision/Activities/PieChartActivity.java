@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -19,16 +20,22 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.R;
 
 import java.util.ArrayList;
+
+import io.realm.Realm;
 
 public class PieChartActivity extends Activity {
 
     private float[] yData;
     ArrayList<String> questions;
+    ArrayList<String> resultQuestion;
     FrameLayout mainActivity;
+    Realm realm;
     PieChart mChart;
+    String decisionName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,8 @@ public class PieChartActivity extends Activity {
         setContentView(R.layout.activity_pie_chart);
         Intent intent = getIntent();
         double[] results = intent.getDoubleArrayExtra("results");
+        Long id = intent.getLongExtra("decisionId",0);
+        decisionName = getDecisionName(id);
         yData = new float[results.length];
         for (int i = 0; i < results.length; i++) {
             yData[i] = (float) results[i];
@@ -44,7 +53,7 @@ public class PieChartActivity extends Activity {
         mChart = (PieChart) findViewById(R.id.myPieChart);
 
         mChart.setUsePercentValues(true);
-        mChart.setDescription("Your Decision");
+        mChart.setDescription(decisionName);
 
         mChart.setDrawHoleEnabled(true);
         mChart.setHoleRadius(5);
@@ -54,7 +63,7 @@ public class PieChartActivity extends Activity {
         mChart.setRotationEnabled(true);
         mChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
         mChart.animateX(1400, Easing.EasingOption.EaseInOutQuad);
-        mChart.setBackgroundColor(Color.LTGRAY);
+        mChart.setBackgroundColor(Color.WHITE);
 
         addData();
 
@@ -74,30 +83,36 @@ public class PieChartActivity extends Activity {
         });
     }
 
-
     private void addData() {
-        ArrayList<PieEntry> yVals = new ArrayList<>();
-        for (int i = 0; i < yData.length; i++) {
-            if (yData[i] != 0) {
-                yVals.add(new PieEntry(yData[i], i));
-            }
-        }
-
         ArrayList<Integer> colors = new ArrayList<>();
+        ArrayList<PieEntry> yVals = new ArrayList<>();
         questions = new ArrayList<>();
-        questions.add(getBaseContext().getString(R.string.what_will_if_it_happens));
-        questions.add(getBaseContext().getString(R.string.what_will_if_it_doesnt_happen));
-        questions.add(getBaseContext().getString(R.string.what_wont_be_if_id_doesnt_happens));
-        questions.add(getBaseContext().getString(R.string.what_wont_be_if_it_happens));
-
 
         colors.add(Color.GREEN);
         colors.add(Color.RED);
-        colors.add(Color.BLUE);
         colors.add(Color.YELLOW);
+        colors.add(Color.BLUE);
+
+        questions.add(getBaseContext().getString(R.string.what_will_if_it_happens));
+        questions.add(getBaseContext().getString(R.string.what_will_if_it_doesnt_happen));
+        questions.add(getBaseContext().getString(R.string.what_wont_be_if_it_happens));
+        questions.add(getBaseContext().getString(R.string.what_wont_be_if_id_doesnt_happens));
+
+
+        ArrayList<Integer> resultColor = new ArrayList<>();
+        resultQuestion = new ArrayList<>();
+
+        for (int i = 0; i < yData.length; i++) {
+            if(yData[i]!=0){
+                yVals.add(new PieEntry(yData[i], i));
+                resultColor.add(colors.get(i));
+                resultQuestion.add(questions.get(i));
+            }
+        }
+
 
         Legend l = mChart.getLegend();
-        l.setCustom(colors, questions);
+        l.setCustom(resultColor, resultQuestion);
         l.setPosition(Legend.LegendPosition.LEFT_OF_CHART);
         l.setTextSize(10.5F);
 
@@ -105,8 +120,8 @@ public class PieChartActivity extends Activity {
         dataSet.setSliceSpace(3);
         dataSet.setSelectionShift(4);
 
-        colors.add(ColorTemplate.getHoloBlue());
-        dataSet.setColors(colors);
+
+        dataSet.setColors(resultColor);
 
         PieData pieData = new PieData(dataSet);
 
@@ -118,7 +133,18 @@ public class PieChartActivity extends Activity {
         mChart.setData(pieData);
         mChart.highlightValues(null);
         mChart.invalidate();
+    }
 
-
+    public String getDecisionName(final long id){
+        final StringBuilder name = new StringBuilder();
+        realm = Realm.getDefaultInstance();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                Decision result = realm.where(Decision.class).equalTo("id", id).findFirst();
+                name.append(result.getmDecisionName());
+            }
+        });
+        return name.toString();
     }
 }

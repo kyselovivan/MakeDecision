@@ -32,7 +32,6 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
- //       changeStyleActivity();
         Intent intent = getIntent();
         decisionId = intent.getLongExtra("idDecision", 0L);
         editId = intent.getLongExtra("editDecisionId",0L);
