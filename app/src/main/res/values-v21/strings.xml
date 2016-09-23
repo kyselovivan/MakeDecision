@@ -3,7 +3,7 @@
 
     <string name="make_decision">Принять решение</string>
     <string name="get_my_decisions">Мои решения</string>
-    <string name="about_us">О программе</string>
+    <string name="about_us">О технике</string>
     <string name="txtv_enter_question">Введите вопрос</string>
     <string name="add_decision">Добавить решение</string>
     <string name="enter_question">Пожалуйста, введите вопрос!</string>
@@ -33,5 +33,7 @@
     <string name="calculate">Рассчитать</string>
     <string name="Розрахувати">Рассчитать</string>
     <string name="action_settings">action_settings</string>
+    <string name="decart_title">Техника прнятия решения\n \"Квадрат Декарта\"</string>
+    <string name="descarts_sqare_technique">Техника подразумевает ответы на четыре основных вопроса. Эти четыре вопроса можно образно представить как четыре пункта наблюдения за проблемой, с которых можно рассмотреть проблему с разных сторон и получить о ней наиболее объективное представление. И ещё: очень важно дать на каждый из четырёх вопросов как можно большее количество ответов и присвоить уровень важности для каждого (насколько ответ важен для вас). Это позволит рассмотреть максимальное количество особенностей проблемы.</string>
 
 </resources>
