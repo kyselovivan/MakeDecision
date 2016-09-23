@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.ivart.makedecision.Activities.AboutTechnique;
-import com.ivart.makedecision.Activities.AboutUsActivity;
 import com.ivart.makedecision.Activities.MakeDecisionActivity;
 import com.ivart.makedecision.Activities.MyDecisionsActivity;
 
