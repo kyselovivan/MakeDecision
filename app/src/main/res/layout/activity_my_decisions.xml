@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               xmlns:fab="http://schemas.android.com/apk/res-auto"
@@ -10,7 +10,8 @@
         android:id="@+id/listv_decision_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"></ListView>
+        android:layout_weight="1">
+        </ListView>
 
     <com.melnykov.fab.FloatingActionButton
         android:id="@+id/btn_clear_decisions"
@@ -24,4 +25,4 @@
         fab:fab_colorPressed="@color/theme_yellow_primary_dark"
         fab:fab_colorRipple="@color/theme_yellow_primary_dark"
         />
-</LinearLayout>
+</FrameLayout>

@@ -75,7 +75,7 @@
         app:sub_btn_tick_color="@color/white"
         android:layout_width="match_parent"
         android:onClick="onClick"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="65dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
 
