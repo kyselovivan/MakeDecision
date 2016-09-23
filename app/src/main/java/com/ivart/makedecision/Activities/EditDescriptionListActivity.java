@@ -159,30 +159,4 @@ public class EditDescriptionListActivity extends Activity  {
         descriptionsList.invalidateViews();
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_action_bar, menu);
-//        return true;
-//    }
-
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int id = item.getItemId();
-//
-//        if (id == R.id.calculate) {
-//            CalculateDecison calculate = new CalculateDecison();
-//            double ifItHapp = calculate.getRaitingBySquare(decisionId,1);
-//            double ifItDoesnt = calculate.getRaitingBySquare(decisionId,2);
-//            double wontItItHapp = calculate.getRaitingBySquare(decisionId,3);
-//            double wontItItDoesnt = calculate.getRaitingBySquare(decisionId,4);
-//            double[] results = {ifItHapp,ifItDoesnt,wontItItHapp,wontItItDoesnt};
-//            Intent intent = new Intent(this, PieChartActivity.class);
-//            intent.putExtra("results",results);
-//            intent.putExtra("decisionId",decisionId);
-//            startActivity(intent);
-//
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
-
 }
