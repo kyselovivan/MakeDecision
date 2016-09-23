@@ -33,7 +33,8 @@
         android:layout_weight="0.3"
         android:fillAfter= "true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick2"/>
 
     <com.spark.submitbutton.SubmitButton
         android:layout_height="match_parent"
@@ -51,7 +52,8 @@
         app:sub_btn_tick_color="@color/white"
         android:layout_width="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick"/>
 
     <com.spark.submitbutton.SubmitButton
         android:layout_width="match_parent"
@@ -68,7 +70,8 @@
         app:sub_btn_ripple_color="@color/green"
         app:sub_btn_tick_color="@color/white"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick1"/>
 
 
 </RelativeLayout>

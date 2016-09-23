@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:weightSum="1">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:fab="http://schemas.android.com/apk/res-auto"
+             android:orientation="vertical"
+             android:weightSum="1">
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/btn_clear_decisions"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center|center_horizontal"
+        android:layout_margin="24dp"
+        android:src="@drawable/ic_clear_black_24dp"
+        android:onClick="onClick"
+        fab:fab_colorNormal="@color/accent"
+        fab:fab_colorPressed="@color/theme_yellow_primary_dark"
+        fab:fab_colorRipple="@color/theme_yellow_primary_dark"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +38,8 @@
                 android:background="@drawable/bkg"
                 android:text="@string/what_will_if_it_happens"
                 android:textColor="@color/primary_light"
-                android:textSize="@dimen/category_item_text_size"/>
+                android:textSize="@dimen/category_item_text_size"
+                android:textAllCaps="false"/>
 
             <Button
                 android:id="@+id/btn_will_if_it_doesnt"
@@ -35,7 +49,8 @@
                 android:background="@drawable/bkg"
                 android:text="@string/what_will_if_it_doesnt_happen"
                 android:textColor="@color/primary_light"
-                android:textSize="@dimen/category_item_text_size"/>
+                android:textSize="@dimen/category_item_text_size"
+                android:textAllCaps="false"/>
         </LinearLayout>
 
         <LinearLayout
@@ -52,7 +67,8 @@
                 android:background="@drawable/bkg"
                 android:text="@string/what_wont_be_if_it_happens"
                 android:textColor="@color/primary_light"
-                android:textSize="@dimen/category_item_text_size"/>
+                android:textSize="@dimen/category_item_text_size"
+                android:textAllCaps="false"/>
 
             <Button
                 android:id="@+id/btn_wont_if_it_doesnt"
@@ -62,8 +78,9 @@
                 android:background="@drawable/bkg"
                 android:text="@string/what_wont_be_if_id_doesnt_happens"
                 android:textColor="@color/primary_light"
-                android:textSize="@dimen/category_item_text_size"/>
+                android:textSize="@dimen/category_item_text_size"
+                android:textAllCaps="false"/>
         </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</FrameLayout>
