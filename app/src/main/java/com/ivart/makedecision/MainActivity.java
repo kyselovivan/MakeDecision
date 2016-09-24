@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.ivart.makedecision.Activities.AboutUsActivity;
+import com.ivart.makedecision.Activities.AboutTechnique;
 import com.ivart.makedecision.Activities.MakeDecisionActivity;
 import com.ivart.makedecision.Activities.MyDecisionsActivity;
 
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         aboutUs.setEnabled(true);
-                        Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
+                        Intent intent = new Intent(MainActivity.this, AboutTechnique.class);
                         startActivity(intent);
                     }
                 });

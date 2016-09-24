@@ -9,7 +9,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,14 +16,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.MakeDecisionActivity" />
-        <activity android:name=".Activities.AboutUsActivity" />
         <activity android:name=".Activities.MyDecisionsActivity" />
         <activity android:name=".Activities.SquareActivity" />
         <activity android:name=".Activities.DescriptionActivity" />
         <activity android:name=".Activities.DecisionEditActivity" />
         <activity android:name=".Activities.EditDescriptionListActivity" />
         <activity android:name=".Activities.EditDescriptionActivity" />
-        <activity android:name=".Activities.PieChartActivity"></activity>
+        <activity android:name=".Activities.PieChartActivity" />
+        <activity android:name=".Activities.AboutTechnique"></activity>
     </application>
 
 </manifest>
