@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.ivart.makedecision.Adapters.DecisionListAdapter;
 import com.ivart.makedecision.Model.Decision;
@@ -57,33 +58,38 @@ public class MyDecisionsActivity extends Activity {
 
     }
 
-    public void showDeleteAllDeccisionsDialog() {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle(R.string.delete_all_decisions)
-                .setCancelable(false)
-                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+    public void showDeleteAllDecisionsDialog() {
+        RealmResults<Decision> resultsDecision = realm.where(Decision.class).findAll();
+        if (resultsDecision.isEmpty()) {
+            Toast.makeText(MyDecisionsActivity.this, R.string.noDecisions, Toast.LENGTH_SHORT).show();
+        } else {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            dialog.setTitle(R.string.delete_all_decisions)
+                    .setCancelable(false)
+                    .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 
-                    }
-                })
-                .setPositiveButton(R.string.delete_all, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        final RealmResults<Decision> resultsDecision = realm.where(Decision.class).findAll();
-                        final RealmResults<DecisionDescription> resultsDecisionDescriptions =
-                                realm.where(DecisionDescription.class).findAll();
-                        realm.executeTransaction(new Realm.Transaction() {
-                            @Override
-                            public void execute(Realm realm) {
-                                resultsDecision.deleteAllFromRealm();
-                                resultsDecisionDescriptions.deleteAllFromRealm();
-                            }
-                        });
-                    }
-                });
-        dialog.create();
-        dialog.show();
+                        }
+                    })
+                    .setPositiveButton(R.string.delete_all, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            final RealmResults<Decision> resultsDecision = realm.where(Decision.class).findAll();
+                            final RealmResults<DecisionDescription> resultsDecisionDescriptions =
+                                    realm.where(DecisionDescription.class).findAll();
+                            realm.executeTransaction(new Realm.Transaction() {
+                                @Override
+                                public void execute(Realm realm) {
+                                    resultsDecision.deleteAllFromRealm();
+                                    resultsDecisionDescriptions.deleteAllFromRealm();
+                                }
+                            });
+                        }
+                    });
+            dialog.create();
+            dialog.show();
+        }
     }
 
     public void showDeleteOneDecision(final long id) {
@@ -116,7 +122,7 @@ public class MyDecisionsActivity extends Activity {
                             @Override
                             public void execute(Realm realm) {
                                 Decision results = realm.where(Decision.class).equalTo("id", id).findFirst();
-                                Intent intent = new Intent(MyDecisionsActivity.this,MakeDecisionActivity.class);
+                                Intent intent = new Intent(MyDecisionsActivity.this, MakeDecisionActivity.class);
                                 intent.putExtra("edititngId", results.getId());
                                 startActivity(intent);
                             }
@@ -129,6 +135,6 @@ public class MyDecisionsActivity extends Activity {
     }
 
     public void onClick(View view) {
-        showDeleteAllDeccisionsDialog();
+        showDeleteAllDecisionsDialog();
     }
 }
