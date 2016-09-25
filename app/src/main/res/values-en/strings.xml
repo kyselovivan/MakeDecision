@@ -13,7 +13,7 @@
     <string name="delete_description">Delete this decision?</string>
     <string name="delete_single_description">Delete this description?</string>
     <string name="description_rait">Raiting</string>
-    <string name="description_was_added">Description added! You can add another one in this square or fill another square! Also you can calculate your decision clicked \"Calculate\"!</string>
+    <string name="description_was_added">Description added! You can add another one in this square or fill another square! Also you can calculate your decision clicked on chart icon!</string>
     <string name="edit_description">Update description</string>
     <string name="edit_hint_description">Edit description then click \"Update description\"</string>
     <string name="enter_description">Add description then click\n \"Add description\"</string>
