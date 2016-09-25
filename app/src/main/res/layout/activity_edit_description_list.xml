@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/primary_dark">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:fab="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:background="@color/primary_dark">
 
     <ListView
         android:id="@+id/listv_description_list"
@@ -11,22 +12,16 @@
         android:layout_height="match_parent"
         android:layout_weight="1"></ListView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="5">
-    <Button
-        android:text="@string/add_description"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <com.melnykov.fab.FloatingActionButton
         android:id="@+id/btn_add_description"
-        android:layout_weight="1"/>
-    <Button
-        android:text="@string/clear_description"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/btn_clear_description"
-        android:layout_weight="1"/>
-    </LinearLayout>
-</LinearLayout>
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="24dp"
+        android:src="@drawable/ic_add_white_24dp"
+        android:onClick="onClick"
+        fab:fab_colorNormal="@color/accent"
+        fab:fab_colorPressed="@color/theme_yellow_primary_dark"
+        fab:fab_colorRipple="@color/theme_yellow_primary_dark"
+        />
+</FrameLayout>

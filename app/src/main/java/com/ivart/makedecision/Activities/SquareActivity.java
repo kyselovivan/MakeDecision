@@ -8,6 +8,7 @@ import android.transition.Explode;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ivart.makedecision.Model.CalculateDecison;
@@ -20,7 +21,7 @@ public class SquareActivity extends Activity implements View.OnClickListener {
     Button secondSquare;
     Button thirdSquare;
     Button fourthSquare;
-    com.melnykov.fab.FloatingActionButton calculate_decision;
+    ImageView calculate_decision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class SquareActivity extends Activity implements View.OnClickListener {
         secondSquare = (Button) findViewById(R.id.btn_will_if_it_doesnt);
         thirdSquare = (Button) findViewById(R.id.btn_wont_if_it_happens);
         fourthSquare = (Button) findViewById(R.id.btn_wont_if_it_doesnt);
-        calculate_decision = (com.melnykov.fab.FloatingActionButton) findViewById(R.id.btn_calculate_decision);
+        calculate_decision = (ImageView) findViewById(R.id.calculate);
         setOnClick();
 
         Toast.makeText(this, "Decision id : " + decisionId, Toast.LENGTH_SHORT).show();
@@ -70,7 +71,7 @@ public class SquareActivity extends Activity implements View.OnClickListener {
                 }
                 startDescriptionActivity(decisionId,4);
                 break;
-            case R.id.btn_calculate_decision:
+            case R.id.calculate:
                 CalculateDecison calculate = new CalculateDecison();
                 double ifItHapp = calculate.getRaitingBySquare(decisionId,1);
                 double ifItDoesnt = calculate.getRaitingBySquare(decisionId,2);
