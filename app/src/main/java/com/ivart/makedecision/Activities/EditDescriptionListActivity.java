@@ -35,7 +35,6 @@ public class EditDescriptionListActivity extends Activity  {
         decisionId = intent.getLongExtra("idDecision", 0);
         square = intent.getIntExtra("squareNumber", 0);
         addDescription = (Button) findViewById(R.id.btn_add_description);
-        clearDescriptions = (Button) findViewById(R.id.btn_clear_description);
 
         Toast.makeText(this, "Decision id =" + decisionId + "\n square = " + square, Toast.LENGTH_SHORT).show();
 

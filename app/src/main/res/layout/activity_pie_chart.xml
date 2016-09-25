@@ -4,10 +4,12 @@
     android:id="@+id/activity_pie_chart"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ivart.makedecision.Activities.PieChartActivity">
+    tools:context="com.ivart.makedecision.Activities.PieChartActivity"
+    android:background="@color/primary_dark">
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/myPieChart"
+        android:background="@color/primary_dark"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></com.github.mikephil.charting.charts.PieChart>
 </FrameLayout>
