@@ -31,7 +31,7 @@ public class DecisionEditActivity extends Activity implements View.OnClickListen
         secondSquare = (Button) findViewById(R.id.btn_will_if_it_doesnt);
         thirdSquare = (Button) findViewById(R.id.btn_wont_if_it_happens);
         fourthSquare = (Button) findViewById(R.id.btn_wont_if_it_doesnt);
-        calculate_decision = (com.melnykov.fab.FloatingActionButton)findViewById(R.id.calculate);
+        calculate_decision = (ImageView)findViewById(R.id.calculate);
 
         setOnClick();
         Toast.makeText(this, ""+decisionId, Toast.LENGTH_SHORT).show();
