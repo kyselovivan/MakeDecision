@@ -22,8 +22,8 @@ public class EditDescriptionListActivity extends Activity  {
 
     Long decisionId;
     int square;
-    Button addDescription;
-    Button clearDescriptions;
+    com.melnykov.fab.FloatingActionButton addDescription;
+    //Button clearDescriptions;
     ListView descriptionsList;
     Realm realm;
 
@@ -34,7 +34,7 @@ public class EditDescriptionListActivity extends Activity  {
         Intent intent = getIntent();
         decisionId = intent.getLongExtra("idDecision", 0);
         square = intent.getIntExtra("squareNumber", 0);
-        addDescription = (Button) findViewById(R.id.btn_add_description);
+        addDescription = (com.melnykov.fab.FloatingActionButton) findViewById(R.id.btn_add_description);
 
         Toast.makeText(this, "Decision id =" + decisionId + "\n square = " + square, Toast.LENGTH_SHORT).show();
 
@@ -65,12 +65,6 @@ public class EditDescriptionListActivity extends Activity  {
             }
         });
 
-        clearDescriptions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDeleteAllDescriptionDialog(decisionId, square);
-            }
-        });
 
         addDescription.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,34 +76,34 @@ public class EditDescriptionListActivity extends Activity  {
     }
 
 
-    public void showDeleteAllDescriptionDialog(final long decisionId, final int square) {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle(R.string.delete_all_descriptions)
-                .setCancelable(false)
-                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                })
-                .setPositiveButton(R.string.delete_all, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        final RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
-                                .equalTo("decisionId", decisionId)
-                                .equalTo("square", square)
-                                .findAll();
-                        realm.executeTransaction(new Realm.Transaction() {
-                            @Override
-                            public void execute(Realm realm) {
-                                results.deleteAllFromRealm();
-                            }
-                        });
-                    }
-                });
-        dialog.create();
-        dialog.show();
-    }
+//    public void showDeleteAllDescriptionDialog(final long decisionId, final int square) {
+//        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+//        dialog.setTitle(R.string.delete_all_descriptions)
+//                .setCancelable(false)
+//                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//
+//                    }
+//                })
+//                .setPositiveButton(R.string.delete_all, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        final RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
+//                                .equalTo("decisionId", decisionId)
+//                                .equalTo("square", square)
+//                                .findAll();
+//                        realm.executeTransaction(new Realm.Transaction() {
+//                            @Override
+//                            public void execute(Realm realm) {
+//                                results.deleteAllFromRealm();
+//                            }
+//                        });
+//                    }
+//                });
+//        dialog.create();
+//        dialog.show();
+//    }
 
     public void showDeleteSingleDescriptionDialog(final long id, final int square) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
