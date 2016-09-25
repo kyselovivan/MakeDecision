@@ -21,7 +21,7 @@
     <string name="enter_question">Будь ласка введіть назву рішення!</string>
     <string name="get_my_decisions">Мої рішення</string>
     <string name="make_decision">Прийняти рішення</string>
-    <string name="please_enter_description">Будь ласка введіть опис, після натисніть\n \"Додати опис\"</string>
+    <string name="please_enter_description">Будь ласка введіть опис а додайте рівень важливості (від 1 до 5), після натисніть\n \"Додати опис\"</string>
     <string name="txtv_enter_question">"Будь ласка введіть питання: "</string>
     <string name="what_will_if_it_doesnt_happen">Що буде, якщо цього не трапиться?</string>
     <string name="what_will_if_it_happens">Що буде, якщо це трапиться?</string>

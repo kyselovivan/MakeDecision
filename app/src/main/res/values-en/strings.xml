@@ -20,7 +20,7 @@
     <string name="enter_question">Please enter the name of decision!</string>
     <string name="get_my_decisions">My decisions</string>
     <string name="make_decision">Make decision</string>
-    <string name="please_enter_description">Please enter description then click \"Add description\"</string>
+    <string name="please_enter_description">Please enter description and set severity (from 1 to 5), then click \"Add description\"</string>
     <string name="txtv_enter_question">Please enter the question:</string>
     <string name="what_will_if_it_doesnt_happen">What will be if it doesn\'t happen?</string>
     <string name="what_will_if_it_happens">What will be if it happens?</string>
