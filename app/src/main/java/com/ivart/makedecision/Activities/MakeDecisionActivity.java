@@ -31,7 +31,7 @@ public class MakeDecisionActivity extends Activity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_decision);
-        Intent intent = new Intent();
+        Intent intent = getIntent();
         editingId = intent.getLongExtra("editingId", 0);
         realm = Realm.getDefaultInstance();
         decisionQuestion = (EditText) findViewById(R.id.edt_decision_question);
