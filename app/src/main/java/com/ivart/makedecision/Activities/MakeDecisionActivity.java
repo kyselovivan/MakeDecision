@@ -17,12 +17,13 @@ import com.ivart.makedecision.R;
 
 import io.realm.Realm;
 
-public class MakeDecisionActivity extends Activity implements View.OnClickListener{
+public class MakeDecisionActivity extends Activity implements View.OnClickListener {
 
     EditText decisionQuestion;
     Decision decision;
     Realm realm;
     Long id;
+    Long editingId;
     com.melnykov.fab.FloatingActionButton add_decision;
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -30,27 +31,40 @@ public class MakeDecisionActivity extends Activity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_decision);
+        Intent intent = new Intent();
+        editingId = intent.getLongExtra("editingId", 0);
         realm = Realm.getDefaultInstance();
         decisionQuestion = (EditText) findViewById(R.id.edt_decision_question);
-        add_decision = (com.melnykov.fab.FloatingActionButton)findViewById(R.id.btn_add_decision);
+        add_decision = (com.melnykov.fab.FloatingActionButton) findViewById(R.id.btn_add_decision);
         add_decision.setOnClickListener(this);
 
     }
 
     public void saveIntoDatabase(final String decisionName) {
-        realm.executeTransactionAsync(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                decision = realm.createObject(Decision.class);
-                id = BaseApplication.productPrimaryKey.getAndIncrement();
-                decision.setId(id);
-                decision.setmDecisionName(decisionName);
-                Intent intent = new Intent(MakeDecisionActivity.this,SquareActivity.class);
-                intent.putExtra("decisionId", id);
-                startActivity(intent);
-                Log.d("LOG",""+id);
-            }
-        });
+        if (editingId != 0) {
+            Decision toEdit = realm.where(Decision.class)
+                    .equalTo("id", editingId).findFirst();
+            realm.beginTransaction();
+            toEdit.setmDecisionName(decisionQuestion.getText().toString());
+            realm.commitTransaction();
+            Intent intent = new Intent(MakeDecisionActivity.this, SquareActivity.class);
+            intent.putExtra("decisionId", editingId);
+            startActivity(intent);
+        } else {
+            realm.executeTransactionAsync(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    decision = realm.createObject(Decision.class);
+                    id = BaseApplication.productPrimaryKey.getAndIncrement();
+                    decision.setId(id);
+                    decision.setmDecisionName(decisionName);
+                    Intent intent = new Intent(MakeDecisionActivity.this, SquareActivity.class);
+                    intent.putExtra("decisionId", id);
+                    startActivity(intent);
+                    Log.d("LOG", "" + id);
+                }
+            });
+        }
     }
 
     public void onClick(View view) {

@@ -121,9 +121,10 @@ public class MyDecisionsActivity extends Activity {
                         realm.executeTransaction(new Realm.Transaction() {
                             @Override
                             public void execute(Realm realm) {
-                                Decision results = realm.where(Decision.class).equalTo("id", id).findFirst();
+                                Decision result = realm.where(Decision.class).equalTo("id", id).findFirst();
                                 Intent intent = new Intent(MyDecisionsActivity.this, MakeDecisionActivity.class);
-                                intent.putExtra("edititngId", results.getId());
+                                Long resultId = result.getId();
+                                intent.putExtra("editingId", resultId);
                                 startActivity(intent);
                             }
                         });
