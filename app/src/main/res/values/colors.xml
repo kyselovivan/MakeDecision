@@ -9,6 +9,7 @@
     <color name="colorDarkRose">#f08080</color>
     <color name="colorSky">#9bfff4</color>
     <color name="colorGreenLight">#a6ff9b</color>
+    <color name="colorGreenLight1">#54af49</color>
 
     <color name="touch_effect">#9ccc</color>
 
@@ -27,7 +28,7 @@
     <color name="theme_blue_text">@color/text_light</color>
     <color name="theme_blue_primary_dark">#038dcc</color>
 
-    <color name="theme_green_background">#b9f6ca</color>
+    <color name="theme_green_background">#77ec97</color>
     <color name="theme_green_primary">#1de9b6</color>
     <color name="theme_green_accent">#e919ff</color>
     <color name="theme_green_text">@color/text_dark</color>
