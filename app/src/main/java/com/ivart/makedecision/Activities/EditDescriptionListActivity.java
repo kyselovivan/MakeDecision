@@ -36,7 +36,7 @@ public class EditDescriptionListActivity extends Activity  {
         square = intent.getIntExtra("squareNumber", 0);
         addDescription = (com.melnykov.fab.FloatingActionButton) findViewById(R.id.btn_add_description);
 
-        Toast.makeText(this, "Decision id =" + decisionId + "\n square = " + square, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Decision id =" + decisionId + "\n square = " + square, Toast.LENGTH_SHORT).show();
 
         realm = Realm.getDefaultInstance();
         RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
