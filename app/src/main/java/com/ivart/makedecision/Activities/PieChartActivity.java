@@ -54,6 +54,7 @@ public class PieChartActivity extends Activity {
 
         mChart.setUsePercentValues(true);
         mChart.setDescription(decisionName);
+        mChart.setDescriptionTextSize(20);
 
         mChart.setDrawHoleEnabled(true);
         mChart.setHoleRadius(5);
