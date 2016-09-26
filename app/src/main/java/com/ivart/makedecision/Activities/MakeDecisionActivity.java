@@ -47,7 +47,7 @@ public class MakeDecisionActivity extends Activity implements View.OnClickListen
             realm.beginTransaction();
             toEdit.setmDecisionName(decisionQuestion.getText().toString());
             realm.commitTransaction();
-            Intent intent = new Intent(MakeDecisionActivity.this, SquareActivity.class);
+            Intent intent = new Intent(MakeDecisionActivity.this, DecisionEditActivity.class);
             intent.putExtra("decisionId", editingId);
             startActivity(intent);
         } else {
