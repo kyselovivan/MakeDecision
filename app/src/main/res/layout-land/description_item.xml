@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="80dp"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:background="@color/primary_dark"
+              android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtv_description_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        tools:text="text"
+        android:layout_weight="1"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:src="@mipmap/rait_logo"/>
+
+    <TextView
+        android:id="@+id/txtv_description_rait"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_weight="3"
+        />
+</LinearLayout>

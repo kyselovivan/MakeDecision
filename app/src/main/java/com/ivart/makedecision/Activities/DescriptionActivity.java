@@ -50,7 +50,7 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
         raiting = raitBar.getRating();
         switch (v.getId()) {
             case R.id.btn_add_description:
-                if (text.equals("")) {
+                if (text.isEmpty() || raiting == 0) {
                     Toast.makeText(this, R.string.please_enter_description, Toast.LENGTH_LONG).show();
                 } else {
                     if (editSquare != 0) {
