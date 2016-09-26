@@ -23,7 +23,22 @@ public class CalculateDecison {
         float temp = 0;
         RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class).equalTo("decisionId",id).findAll();
         for(int i=0;i<results.size();i++){
-            temp += results.get(i).getRaiting();
+            float res= results.get(i).getRaiting();
+            if(res == 1){
+                temp+=0.1;
+            }
+            else if(res == 2){
+                temp+=0.25;
+            }
+            else if(res == 3){
+                temp+=0.5;
+            }
+            else if(res == 4){
+                temp+=0.75;
+            }
+            else if(res == 5){
+                temp+=1;
+            }
         }
         return temp;
     }
@@ -34,7 +49,22 @@ public class CalculateDecison {
                 .equalTo("decisionId",id)
                 .equalTo("square",square).findAll();
         for(int i=0;i<results.size();i++){
-            temp += results.get(i).getRaiting();
+            float res= results.get(i).getRaiting();
+            if(res == 1){
+                temp+=0.1;
+            }
+            else if(res == 2){
+                temp+=0.25;
+            }
+            else if(res == 3){
+                temp+=0.5;
+            }
+            else if(res == 4){
+                temp+=0.75;
+            }
+            else if(res == 5){
+                temp+=1;
+            }
         }
         double result = temp*100/getSummaryRaitingByDecisionId(id);
         return result;
