@@ -85,7 +85,7 @@ public class PieChartActivity extends Activity {
         ArrayList<PieEntry> yVals = new ArrayList<>();
         questions = new ArrayList<>();
 
-        colors.add(Color.parseColor("#19cc9f"));//green
+        colors.add(Color.parseColor("#54af49"));//green
         colors.add(Color.parseColor("#f08080"));//red
         colors.add(Color.parseColor("#ffff8d")); //yellow
         colors.add(Color.parseColor("#03a9f4"));//blue
