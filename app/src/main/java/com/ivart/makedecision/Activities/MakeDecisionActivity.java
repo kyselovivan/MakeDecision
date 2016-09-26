@@ -24,6 +24,7 @@ public class MakeDecisionActivity extends Activity implements View.OnClickListen
     Realm realm;
     Long id;
     Long editingId;
+    String editingName;
     com.melnykov.fab.FloatingActionButton add_decision;
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -33,8 +34,13 @@ public class MakeDecisionActivity extends Activity implements View.OnClickListen
         setContentView(R.layout.activity_make_decision);
         Intent intent = getIntent();
         editingId = intent.getLongExtra("editingId", 0);
+        editingName = intent.getStringExtra("editName");
         realm = Realm.getDefaultInstance();
         decisionQuestion = (EditText) findViewById(R.id.edt_decision_question);
+        if(editingName!=null){
+            decisionQuestion.setText(editingName);
+            decisionQuestion.setSelection(decisionQuestion.getText().length());
+        }
         add_decision = (com.melnykov.fab.FloatingActionButton) findViewById(R.id.btn_add_decision);
         add_decision.setOnClickListener(this);
 

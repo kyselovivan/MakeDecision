@@ -122,9 +122,11 @@ public class MyDecisionsActivity extends Activity {
                             @Override
                             public void execute(Realm realm) {
                                 Decision result = realm.where(Decision.class).equalTo("id", id).findFirst();
+                                String name = result.getmDecisionName();
                                 Intent intent = new Intent(MyDecisionsActivity.this, MakeDecisionActivity.class);
                                 Long resultId = result.getId();
                                 intent.putExtra("editingId", resultId);
+                                intent.putExtra("editName",name);
                                 startActivity(intent);
                             }
                         });
