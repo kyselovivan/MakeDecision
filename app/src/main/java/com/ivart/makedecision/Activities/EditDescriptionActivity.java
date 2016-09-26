@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
 import com.ivart.makedecision.Model.DecisionDescription;
 import com.ivart.makedecision.R;
@@ -28,9 +29,9 @@ public class EditDescriptionActivity extends Activity {
         Intent intent = getIntent();
         descriptionId = intent.getLongExtra("descriptionId",0);
         realm = Realm.getDefaultInstance();
-        final RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
-                .equalTo("id",descriptionId)
-                .findAll();
+//        final RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
+//                .equalTo("id",descriptionId)
+//                .findAll();
         DecisionDescription textToEdit = realm.where(DecisionDescription.class).equalTo("id",descriptionId).findFirst();
         String tempText = textToEdit.getDescriptionText();
         editTextDescription = (EditText)findViewById(R.id.edt_edit_decision_description);
@@ -52,7 +53,14 @@ public class EditDescriptionActivity extends Activity {
 
 
     public void onClick(View view) {
-        updateDescription(realm);
-        EditDescriptionActivity.this.finish();
+        String text = editTextDescription.getText().toString();
+        float raiting = editRaitBar.getRating();
+        if (text.isEmpty() || raiting == 0) {
+            Toast.makeText(this, R.string.please_enter_description, Toast.LENGTH_LONG).show();
+        } else {
+            updateDescription(realm);
+            EditDescriptionActivity.this.finish();
+        }
+
     }
 }
