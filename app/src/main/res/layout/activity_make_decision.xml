@@ -7,14 +7,14 @@
     android:orientation="vertical"
     android:background="@color/primary_dark"
     tools:context="com.ivart.makedecision.Activities.MakeDecisionActivity">
-    <TextView
+    <!--<TextView
         android:text="@string/txtv_enter_question"
         android:textColor="@color/primary_light"
         android:layout_width="match_parent"
         android:layout_height="81dp"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:gravity="center_vertical|center_horizontal"/>
+        android:gravity="center_vertical|center_horizontal"/> -->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="match_parent"
