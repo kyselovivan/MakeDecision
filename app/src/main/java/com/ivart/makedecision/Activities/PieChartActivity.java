@@ -3,8 +3,6 @@ package com.ivart.makedecision.Activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -19,7 +17,6 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.ColorTemplate;
 import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.R;
 
@@ -64,7 +61,7 @@ public class PieChartActivity extends Activity {
         mChart.setRotationEnabled(true);
         mChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
         mChart.animateX(1400, Easing.EasingOption.EaseInOutQuad);
-        mChart.setBackgroundColor(Color.WHITE);
+        mChart.setBackgroundColor(Color.parseColor("#607d8b"));
 
         addData();
 
@@ -89,10 +86,10 @@ public class PieChartActivity extends Activity {
         ArrayList<PieEntry> yVals = new ArrayList<>();
         questions = new ArrayList<>();
 
-        colors.add(Color.GREEN);
-        colors.add(Color.RED);
-        colors.add(Color.YELLOW);
-        colors.add(Color.BLUE);
+        colors.add(Color.parseColor("#54af49"));//green
+        colors.add(Color.parseColor("#f08080"));//red
+        colors.add(Color.parseColor("#ffff8d")); //yellow
+        colors.add(Color.parseColor("#03a9f4"));//blue
 
         questions.add(getBaseContext().getString(R.string.what_will_if_it_happens));
         questions.add(getBaseContext().getString(R.string.what_will_if_it_doesnt_happen));
@@ -128,8 +125,8 @@ public class PieChartActivity extends Activity {
 
         pieData.setValueFormatter(new PercentFormatter());
         pieData.setValueTextSize(20f);
-        pieData.setValueTextColor(Color.BLACK);
-        pieData.setValueTypeface(Typeface.SANS_SERIF);
+        pieData.setValueTextColor(Color.parseColor("#212121"));
+//        pieData.setValueTypeface(Typeface.SANS_SERIF);
 
         mChart.setData(pieData);
         mChart.highlightValues(null);
