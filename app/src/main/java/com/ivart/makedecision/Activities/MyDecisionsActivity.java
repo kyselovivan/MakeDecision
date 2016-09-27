@@ -33,29 +33,34 @@ public class MyDecisionsActivity extends Activity {
         realm = Realm.getDefaultInstance();
         decisionList = (ListView) findViewById(R.id.listv_decision_list);
         RealmResults<Decision> results = realm.where(Decision.class).findAll();
-        final DecisionListAdapter decisionListAdapter = new DecisionListAdapter(this, results);
-        decisionList.setAdapter(decisionListAdapter);
+        if(results.isEmpty()){
+            setContentView(R.layout.empty_decision_list);
+        }
+        else{
+            final DecisionListAdapter decisionListAdapter = new DecisionListAdapter(this, results);
+            decisionList.setAdapter(decisionListAdapter);
 
-        decisionList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Long tempId = decisionListAdapter.getRealmResults().get(position).getId();
-                Intent intent = new Intent(MyDecisionsActivity.this, DecisionEditActivity.class);
-                intent.putExtra("decisionId", tempId);
-                startActivity(intent);
-            }
-        });
+            decisionList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Long tempId = decisionListAdapter.getRealmResults().get(position).getId();
+                    Intent intent = new Intent(MyDecisionsActivity.this, DecisionEditActivity.class);
+                    intent.putExtra("decisionId", tempId);
+                    startActivity(intent);
+                }
+            });
 
-        decisionList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Long tempId = decisionListAdapter.getRealmResults().get(position).getId();
-                showDeleteOneDecision(tempId);
-                decisionList.invalidateViews();
-                return true;
-            }
-        });
+            decisionList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                    Long tempId = decisionListAdapter.getRealmResults().get(position).getId();
+                    showDeleteOneDecision(tempId);
+                    decisionList.invalidateViews();
+                    return true;
+                }
+            });
 
+        }
     }
 
     public void showDeleteAllDecisionsDialog() {
@@ -85,6 +90,7 @@ public class MyDecisionsActivity extends Activity {
                                     resultsDecisionDescriptions.deleteAllFromRealm();
                                 }
                             });
+                            setContentView(R.layout.empty_decision_list);
                         }
                     });
             dialog.create();
