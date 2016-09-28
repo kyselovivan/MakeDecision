@@ -16,7 +16,7 @@
     <string name="description_was_added">Description added! You can add another one in this square or fill another square! Also you can calculate your decision clicked on chart icon!</string>
     <string name="edit_description">Update description</string>
     <string name="edit_hint_description">Edit description then click \"+\"</string>
-    <string name="enter_description">Add description then click\n \"+\"</string>
+    <string name="enter_description">Add description and severity\n then click \"+\"</string>
     <string name="enter_question">Please enter the name of decision!</string>
     <string name="get_my_decisions">My decisions</string>
     <string name="make_decision">Make decision</string>
@@ -26,11 +26,12 @@
     <string name="what_will_if_it_happens">What will be if it happens?</string>
     <string name="what_wont_be_if_id_doesnt_happens">What <b><i>WON\'T</i></b> be if it <b><i>DOESN\'T</i></b> happen?</string>
     <string name="what_wont_be_if_it_happens">What <b><i>WON\'T</i></b> be if it happens?</string>
-    <string name="hint_enter_the_question">Enter the question\n or a name of problem...</string>
+    <string name="hint_enter_the_question">Enter the question\n or a name of problem\n then click \"+\"</string>
     <string name="calculate">Calculate</string>
     <string name="edit_decision_name">Edit</string>
     <string name="delete_one">Delete</string>
     <string name="decart_title">Техника прнятия решения\n \"Квадрат Декарта\"</string>
     <string name="descarts_sqare_technique"><p>Техника подразумевает ответы на четыре основных вопроса. Эти четыре вопроса можно образно представить как четыре пункта наблюдения за проблемой, с которых можно рассмотреть проблему с разных сторон и получить о ней наиболее объективное представление. И ещё: очень важно дать на каждый из четырёх вопросов как можно большее количество ответов и присвоить уровень важности для каждого (насколько ответ важен для вас). Это позволит рассмотреть максимальное количество особенностей проблемы.</p></string>
     <string name="noDecisions">The list of decisions is empty</string>
+    <string name="no_decisions_yet">No decisions yet</string>
 </resources>

@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.MakeDecisionActivity" />
+        <activity android:name=".Activities.MakeDecisionActivity"
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Activities.MyDecisionsActivity" />
         <activity android:name=".Activities.SquareActivity" />
         <activity android:name=".Activities.DescriptionActivity" />

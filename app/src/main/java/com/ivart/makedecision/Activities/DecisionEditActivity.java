@@ -34,7 +34,7 @@ public class DecisionEditActivity extends Activity implements View.OnClickListen
         calculate_decision = (ImageView)findViewById(R.id.calculate);
 
         setOnClick();
-        Toast.makeText(this, ""+decisionId, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+decisionId, Toast.LENGTH_SHORT).show();
     }
 
     @Override

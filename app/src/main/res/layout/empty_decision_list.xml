@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              xmlns:fab="http://schemas.android.com/apk/res-auto"
-              android:background="@color/primary_dark"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:background="@color/primary_dark"
+    android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/listv_decision_list"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:divider="@color/light_grey"
-        android:dividerHeight="3dp">
-        </ListView>
+        android:text="@string/no_decisions_yet"
+        android:textSize="18sp"
+        android:gravity="center_vertical|center_horizontal"/>
 
     <com.melnykov.fab.FloatingActionButton
         android:id="@+id/btn_clear_decisions"

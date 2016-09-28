@@ -39,7 +39,7 @@ public class SquareActivity extends Activity implements View.OnClickListener {
         calculate_decision = (ImageView) findViewById(R.id.calculate);
         setOnClick();
 
-        Toast.makeText(this, "Decision id : " + decisionId, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Decision id : " + decisionId, Toast.LENGTH_SHORT).show();
     }
 
 
