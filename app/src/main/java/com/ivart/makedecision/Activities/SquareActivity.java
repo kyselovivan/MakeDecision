@@ -12,7 +12,12 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ivart.makedecision.Model.CalculateDecison;
+import com.ivart.makedecision.Model.Decision;
+import com.ivart.makedecision.Model.DecisionDescription;
 import com.ivart.makedecision.R;
+
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 
 public class SquareActivity extends Activity implements View.OnClickListener {
@@ -22,6 +27,7 @@ public class SquareActivity extends Activity implements View.OnClickListener {
     Button thirdSquare;
     Button fourthSquare;
     ImageView calculate_decision;
+    Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,7 @@ public class SquareActivity extends Activity implements View.OnClickListener {
         // enable transitions
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         setContentView(R.layout.activity_square);
+        realm = Realm.getDefaultInstance();
         Intent intent = getIntent();
         decisionId = intent.getLongExtra("decisionId", 0);
 
@@ -43,7 +50,6 @@ public class SquareActivity extends Activity implements View.OnClickListener {
     }
 
 
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -51,38 +57,56 @@ public class SquareActivity extends Activity implements View.OnClickListener {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setExitTransition(new Explode());
                 }
-                startDescriptionActivity(decisionId,1);
+                startDescriptionActivity(decisionId, 1);
                 break;
             case R.id.btn_will_if_it_doesnt:
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setExitTransition(new Explode());
                 }
-                startDescriptionActivity(decisionId,2);
+                startDescriptionActivity(decisionId, 2);
                 break;
             case R.id.btn_wont_if_it_happens:
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setExitTransition(new Explode());
                 }
-                startDescriptionActivity(decisionId,3);
+                startDescriptionActivity(decisionId, 3);
                 break;
             case R.id.btn_wont_if_it_doesnt:
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setExitTransition(new Explode());
                 }
-                startDescriptionActivity(decisionId,4);
+                startDescriptionActivity(decisionId, 4);
                 break;
             case R.id.calculate:
+//                final RealmResults<DecisionDescription> resultSquare1 =
+//                        realm.where(DecisionDescription.class).equalTo("decisionId",decisionId).equalTo("square",1)
+//                        .findAll();
+//                final RealmResults<DecisionDescription> resultSquare2 =
+//                        realm.where(DecisionDescription.class).equalTo("decisionId",decisionId).equalTo("square",2)
+//                                .findAll();
+//                final RealmResults<DecisionDescription> resultSquare3 =
+//                        realm.where(DecisionDescription.class).equalTo("decisionId",decisionId).equalTo("square",3)
+//                                .findAll();
+//                final RealmResults<DecisionDescription> resultSquare4 =
+//                        realm.where(DecisionDescription.class).equalTo("decisionId",decisionId).equalTo("square",4)
+//                                .findAll();
+//                if(resultSquare1.isEmpty() || resultSquare2.isEmpty() || resultSquare3.isEmpty() || resultSquare4.isEmpty()){
+//                    Toast.makeText(this,R.string.checking_before_calculate,Toast.LENGTH_SHORT).show();
+//                    break;
+//                }
+              //  else{
                 CalculateDecison calculate = new CalculateDecison();
-                double ifItHapp = calculate.getRaitingBySquare(decisionId,1);
-                double ifItDoesnt = calculate.getRaitingBySquare(decisionId,2);
-                double wontItItHapp = calculate.getRaitingBySquare(decisionId,3);
-                double wontItItDoesnt = calculate.getRaitingBySquare(decisionId,4);
-                double[] results = {ifItHapp,ifItDoesnt,wontItItHapp,wontItItDoesnt};
+                double ifItHapp = calculate.getRaitingBySquare(decisionId, 1);
+                double ifItDoesnt = calculate.getRaitingBySquare(decisionId, 2);
+                double wontItItHapp = calculate.getRaitingBySquare(decisionId, 3);
+                double wontItItDoesnt = calculate.getRaitingBySquare(decisionId, 4);
+                double[] results = {ifItHapp, ifItDoesnt, wontItItHapp, wontItItDoesnt};
                 Intent intent = new Intent(this, PieChartActivity.class);
-                intent.putExtra("results",results);
-                intent.putExtra("decisionId",decisionId);
+                intent.putExtra("results", results);
+                intent.putExtra("decisionId", decisionId);
                 startActivity(intent);
                 break;
+            //}
         }
     }
 
