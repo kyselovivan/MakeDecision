@@ -39,8 +39,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/descarts_sqare_technique"
+            android:scrollbars="vertical"
             android:textAlignment="center"
-            android:id="@+id/textView" />
+            android:text="@string/descarts_sqare_technique"
+            android:id="@+id/textView_about_technique" />
     </LinearLayout>
 </LinearLayout>
