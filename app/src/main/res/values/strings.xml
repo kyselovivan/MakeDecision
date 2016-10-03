@@ -29,7 +29,7 @@
     <string name="edit_hint_description">Редактируйте описание после\n нажмите \"+\"</string>
     <string name="back">back</string>
     <string name="transition_toolbar">toolbar</string>
-    <string name="hint_enter_the_question">Введите интересующий вас\n вопрос или проблему,\n после нажмите \"+"\</string>
+    <string name="hint_enter_the_question">Введите интересующий вас\n вопрос или проблему,\n после нажмите \"+\"</string>
     <string name="calculate">Рассчитать</string>
     <string name="Розрахувати">Рассчитать</string>
     <string name="action_settings">action_settings</string>
