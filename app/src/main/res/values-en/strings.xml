@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">MakeDecision</string>
     <string name="add_decision">Add decision</string>
-    <string name="about_us">About technique</string>
+    <string name="about_us">Info</string>
     <string name="add_description">Add description</string>
     <string name="cancel">Cancel</string>
     <string name="clear_decisions">Delete decision</string>

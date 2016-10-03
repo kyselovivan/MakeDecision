@@ -3,7 +3,7 @@
     <string name="app_name">MakeDecision</string>
     <string name="make_decision">Принять решение</string>
     <string name="get_my_decisions">Мои решения</string>
-    <string name="about_us">О технике</string>
+    <string name="about_us">Инфо</string>
     <string name="txtv_enter_question">Введите вопрос</string>
     <string name="add_decision">Добавить решение</string>
     <string name="enter_question">Пожалуйста, введите вопрос!</string>

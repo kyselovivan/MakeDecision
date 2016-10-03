@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">MakeDecision</string>
     <string name="delete_all_descriptions">Видалити всі описи?</string>
-    <string name="about_us">Про техніку</string>
+    <string name="about_us">Інфо</string>
     <string name="add_decision">Додати рішення</string>
     <string name="add_description">Додати опис</string>
     <string name="cancel">Відміна</string>
