@@ -80,14 +80,10 @@ public class MyDecisionsActivity extends Activity {
                     .setPositiveButton(R.string.delete_all, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            final RealmResults<Decision> resultsDecision = realm.where(Decision.class).findAll();
-                            final RealmResults<DecisionDescription> resultsDecisionDescriptions =
-                                    realm.where(DecisionDescription.class).findAll();
                             realm.executeTransaction(new Realm.Transaction() {
                                 @Override
                                 public void execute(Realm realm) {
-                                    resultsDecision.deleteAllFromRealm();
-                                    resultsDecisionDescriptions.deleteAllFromRealm();
+                                        realm.deleteAll();
                                 }
                             });
                             setContentView(R.layout.empty_decision_list);
