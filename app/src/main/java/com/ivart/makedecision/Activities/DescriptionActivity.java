@@ -34,12 +34,12 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
         setContentView(R.layout.activity_description);
         Intent intent = getIntent();
         decisionId = intent.getLongExtra("idDecision", 0L);
-        editId = intent.getLongExtra("editDecisionId",0L);
-        editSquare = intent.getIntExtra("editSquare",0);
+        editId = intent.getLongExtra("editDecisionId", 0L);
+        editSquare = intent.getIntExtra("editSquare", 0);
         realm = Realm.getDefaultInstance();
         square = intent.getIntExtra("squareNumber", 0);
         description = (EditText) findViewById(R.id.edt_decision_description);
-        raitBar = (RatingBar)findViewById(R.id.raiting_bar);
+        raitBar = (RatingBar) findViewById(R.id.raiting_bar);
 
     }
 
@@ -65,7 +65,7 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
         }
     }
 
-    public void saveIntoDatabase(final Long decisionId, final int square, final String descriptionText,final float rait) {
+    public void saveIntoDatabase(final Long decisionId, final int square, final String descriptionText, final float rait) {
         realm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -77,12 +77,6 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
                 decisionDescription.setDescriptionText(descriptionText);
                 decisionDescription.setRaiting(rait);
 
-                Log.d("LOG", "<<<<<<<<<<<<<<< success >>>>>>>>>>>>>>>>\n" +
-                        "Decision Id = " + decisionId + "\n" +
-                        "Decision Description Id = " + id + "\n" +
-                        "Decision text = " + descriptionText + "\n" +
-                        "Decision Square = " + square + "\n"+
-                        "Raiting = " + rait + "\n");
             }
         });
         description.getText().clear();
