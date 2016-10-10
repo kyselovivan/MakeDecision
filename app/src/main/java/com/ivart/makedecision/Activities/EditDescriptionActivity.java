@@ -1,9 +1,12 @@
 package com.ivart.makedecision.Activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Toast;
@@ -29,9 +32,6 @@ public class EditDescriptionActivity extends Activity {
         Intent intent = getIntent();
         descriptionId = intent.getLongExtra("descriptionId", 0);
         realm = Realm.getDefaultInstance();
-//        final RealmResults<DecisionDescription> results = realm.where(DecisionDescription.class)
-//                .equalTo("id",descriptionId)
-//                .findAll();
         DecisionDescription textToEdit = realm.where(DecisionDescription.class).equalTo("id", descriptionId).findFirst();
         String tempText = textToEdit.getDescriptionText();
         editTextDescription = (EditText) findViewById(R.id.edt_edit_decision_description);
@@ -42,6 +42,16 @@ public class EditDescriptionActivity extends Activity {
         editRaitBar = (RatingBar) findViewById(R.id.edit_raiting_bar);
 
 
+        editTextDescription.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(editTextDescription.getWindowToken(), 0);
+                }
+                return false;
+            }
+        });
     }
 
 
