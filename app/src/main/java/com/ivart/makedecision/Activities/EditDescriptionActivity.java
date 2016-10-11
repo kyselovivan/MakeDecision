@@ -59,7 +59,7 @@ public class EditDescriptionActivity extends Activity {
         DecisionDescription toEdit = realm.where(DecisionDescription.class)
                 .equalTo("id", descriptionId).findFirst();
         realm.beginTransaction();
-        toEdit.setDescriptionText(editTextDescription.getText().toString());
+        toEdit.setDescriptionText(editTextDescription.getText().toString().trim());
         toEdit.setRaiting(editRaitBar.getRating());
         realm.commitTransaction();
 

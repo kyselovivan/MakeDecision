@@ -67,9 +67,11 @@ public class DescriptionActivity extends Activity implements View.OnClickListene
                     Toast.makeText(this, R.string.please_enter_description, Toast.LENGTH_LONG).show();
                 } else {
                     if (editSquare != 0) {
+                        text = text.trim();
                         saveIntoDatabase(editId, editSquare, text, raiting);
                         DescriptionActivity.this.finish();
                     } else {
+                        text = text.trim();
                         saveIntoDatabase(decisionId, square, text, raiting);
                         DescriptionActivity.this.finish();
                     }
