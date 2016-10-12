@@ -16,10 +16,11 @@
         android:layout_weight="1"
         android:hint="@string/edit_hint_description"
         android:textColorHint="@color/primary_light"
-        android:background="@color/primary_dark"
+        android:background="@android:color/transparent"
         android:inputType="textCapSentences"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        />
     <RatingBar
         android:id="@+id/edit_raiting_bar"
         android:layout_width="wrap_content"

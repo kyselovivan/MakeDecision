@@ -19,6 +19,8 @@
         android:textSize="15dp"
         android:inputType="textCapSentences|textMultiLine"
         android:gravity="center_vertical|center_horizontal"
+        android:background="@android:color/transparent"
+        android:textAlignment="center"
         />
 
     <RatingBar
