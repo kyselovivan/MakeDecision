@@ -19,10 +19,12 @@
             android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Activities.MyDecisionsActivity" />
         <activity android:name=".Activities.SquareActivity" />
-        <activity android:name=".Activities.DescriptionActivity" />
+        <activity android:name=".Activities.DescriptionActivity"
+                  android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Activities.DecisionEditActivity" />
         <activity android:name=".Activities.EditDescriptionListActivity" />
-        <activity android:name=".Activities.EditDescriptionActivity" />
+        <activity android:name=".Activities.EditDescriptionActivity"
+                  android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Activities.PieChartActivity" />
         <activity android:name=".Activities.AboutTechnique"></activity>
     </application>
