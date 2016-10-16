@@ -24,6 +24,7 @@
         android:textColorHint="@color/primary_light"
         android:inputType="textCapSentences|textMultiLine"
         android:layout_weight="40"
+        android:cursorVisible="false"
         android:gravity="center_horizontal|center_vertical" />
 
     <com.melnykov.fab.FloatingActionButton
@@ -33,7 +34,7 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="24dp"
         android:src="@drawable/ic_add_white_24dp"
-        fab:fab_colorNormal="@color/accent"
+        fab:fab_colorNormal="@color/colorGreenLight1"
         fab:fab_colorPressed="@color/theme_yellow_primary_dark"
         fab:fab_colorRipple="@color/theme_yellow_primary_dark"
         />

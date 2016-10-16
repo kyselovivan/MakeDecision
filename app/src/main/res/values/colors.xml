@@ -67,5 +67,8 @@
         <color name="icons">#FFFFFF</color>
         <color name="divider">#BDBDBD</color>
         <color name="border">#0FECFF</color>
+        <color name="limeBack">#CDDC39</color>
+        <color name="backButton">#fcbab4</color>
+
 
 </resources>

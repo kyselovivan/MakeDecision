@@ -23,7 +23,7 @@
         android:layout_margin="24dp"
         android:src="@drawable/ic_clear_black_24dp"
         android:onClick="onClick"
-        fab:fab_colorNormal="@color/accent"
+        fab:fab_colorNormal="@color/theme_red_primary"
         fab:fab_colorPressed="@color/theme_yellow_primary_dark"
         fab:fab_colorRipple="@color/theme_yellow_primary_dark"
         />
