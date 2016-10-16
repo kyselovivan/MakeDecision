@@ -1,4 +1,7 @@
 
+
+
+
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- inherit from the material theme -->
@@ -67,5 +70,11 @@
     </style>
 
     <style name="MakeDecision">yellow</style>
+
+    <style name="MyRatingBar" parent="Theme.AppCompat">
+
+        <item name="colorControlActivated">@color/theme_yellow_primary</item>
+
+    </style>
 
 </resources>

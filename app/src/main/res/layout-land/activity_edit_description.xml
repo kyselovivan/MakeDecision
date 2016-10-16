@@ -20,6 +20,7 @@
         android:background="@android:color/transparent"
         android:layout_gravity="center_vertical|center_horizontal"
         android:textAlignment="center"
+        android:cursorVisible="false"
         android:layout_above="@+id/edit_raiting_bar"/>
 
     <RatingBar
@@ -30,6 +31,7 @@
         android:numStars="5"
         android:stepSize="1"
         android:layout_marginBottom="25dp"
+        android:theme="@style/MyRatingBar"
         android:layout_alignBottom="@+id/btn_edit_description"
         android:layout_centerHorizontal="true"></RatingBar>
 
@@ -40,7 +42,7 @@
         android:layout_gravity="bottom|right"
         android:src="@drawable/ic_add_white_24dp"
         android:onClick="onClick"
-        fab:fab_colorNormal="@color/accent"
+        fab:fab_colorNormal="@color/colorGreenLight1"
         fab:fab_colorPressed="@color/theme_yellow_primary_dark"
         fab:fab_colorRipple="@color/theme_yellow_primary_dark"
         android:layout_marginRight="30dp"

@@ -70,7 +70,7 @@ public class PieChartActivity extends Activity {
             public void onValueSelected(Entry e, Highlight h) {
                 if(e==null) return;
                 else{
-                    Toast.makeText(PieChartActivity.this,""+questions.get((int)e.getData()),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PieChartActivity.this," "+questions.get((int)e.getData()),Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -88,7 +88,7 @@ public class PieChartActivity extends Activity {
 
         colors.add(Color.parseColor("#54af49"));//green
         colors.add(Color.parseColor("#f08080"));//red
-        colors.add(Color.parseColor("#ffff8d")); //yellow
+        colors.add(Color.parseColor("#ffff8d"));//yellow
         colors.add(Color.parseColor("#03a9f4"));//blue
 
         questions.add(getBaseContext().getString(R.string.what_will_if_it_happens));
