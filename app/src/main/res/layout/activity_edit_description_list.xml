@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               xmlns:fab="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
-              android:background="@color/primary_dark">
+              android:background="@drawable/backgroundtwo">
 
     <ListView
         android:id="@+id/listv_description_list"
