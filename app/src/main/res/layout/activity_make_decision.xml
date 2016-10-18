@@ -8,14 +8,7 @@
               android:background="@drawable/backgroundtwo"
               android:orientation="vertical"
               tools:context="com.ivart.makedecision.Activities.MakeDecisionActivity">
-    <!--<TextView
-        android:text="@string/txtv_enter_question"
-        android:textColor="@color/primary_light"
-        android:layout_width="match_parent"
-        android:layout_height="81dp"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:gravity="center_vertical|center_horizontal"/> -->
+
     <EditText
         android:id="@+id/edt_decision_question"
         android:layout_width="match_parent"
