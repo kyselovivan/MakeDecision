@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:divider="@color/light_grey"
+        android:divider="@color/theme_blue_background"
         android:dividerHeight="3dp"></ListView>
     <com.melnykov.fab.FloatingActionButton
         android:id="@+id/btn_add_description"

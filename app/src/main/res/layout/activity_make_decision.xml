@@ -26,7 +26,8 @@
         android:hint="@string/hint_enter_the_question"
         android:inputType="textCapSentences|textMultiLine"
         android:textColor="@color/primary_light"
-        android:textColorHint="@color/primary_light"/>
+        android:textColorHint="@color/primary_light"
+        android:background="@android:color/transparent"/>
 
     <com.melnykov.fab.FloatingActionButton
         android:id="@+id/btn_add_decision"
