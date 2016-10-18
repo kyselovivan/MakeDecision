@@ -78,35 +78,21 @@ public class SquareActivity extends Activity implements View.OnClickListener {
                 startDescriptionActivity(decisionId, 4);
                 break;
             case R.id.calculate:
-//                final RealmResults<DecisionDescription> resultSquare1 =
-//                        realm.where(DecisionDescription.class).equalTo("decisionId",decisionId).equalTo("square",1)
-//                        .findAll();
-//                final RealmResults<DecisionDescription> resultSquare2 =
-//                        realm.where(DecisionDescription.class).equalTo("decisionId",decisionId).equalTo("square",2)
-//                                .findAll();
-//                final RealmResults<DecisionDescription> resultSquare3 =
-//                        realm.where(DecisionDescription.class).equalTo("decisionId",decisionId).equalTo("square",3)
-//                                .findAll();
-//                final RealmResults<DecisionDescription> resultSquare4 =
-//                        realm.where(DecisionDescription.class).equalTo("decisionId",decisionId).equalTo("square",4)
-//                                .findAll();
-//                if(resultSquare1.isEmpty() || resultSquare2.isEmpty() || resultSquare3.isEmpty() || resultSquare4.isEmpty()){
-//                    Toast.makeText(this,R.string.checking_before_calculate,Toast.LENGTH_SHORT).show();
-//                    break;
-//                }
-              //  else{
                 CalculateDecison calculate = new CalculateDecison();
                 double ifItHapp = calculate.getRaitingBySquare(decisionId, 1);
                 double ifItDoesnt = calculate.getRaitingBySquare(decisionId, 2);
                 double wontItItHapp = calculate.getRaitingBySquare(decisionId, 3);
                 double wontItItDoesnt = calculate.getRaitingBySquare(decisionId, 4);
                 double[] results = {ifItHapp, ifItDoesnt, wontItItHapp, wontItItDoesnt};
-                Intent intent = new Intent(this, PieChartActivity.class);
-                intent.putExtra("results", results);
-                intent.putExtra("decisionId", decisionId);
-                startActivity(intent);
+                if(ifItHapp != 0 && ifItDoesnt != 0 && wontItItDoesnt != 0 && wontItItHapp !=0){
+                    Intent intent = new Intent(this, PieChartActivity.class);
+                    intent.putExtra("results", results);
+                    intent.putExtra("decisionId", decisionId);
+                    startActivity(intent);
+                }
+                else Toast.makeText(this, R.string.fill_all_squares,Toast.LENGTH_LONG).show();
                 break;
-            //}
+
         }
     }
 

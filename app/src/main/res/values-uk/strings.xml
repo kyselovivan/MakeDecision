@@ -53,4 +53,5 @@
     <string name="noDecisions">Список рішень пустий</string>
     <string name="no_decisions_yet">Немає рішень</string>
     <string name="checking_before_calculate">Пожалуйста, заполните все квадраты для правильного расчёта решения</string>
+    <string name="fill_all_squares">Будь ласка, заповніть всі квадрати, після скористайтесь діаграмою :)</string>
 </resources>

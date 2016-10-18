@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.ivart.makedecision.Model.CalculateDecison;
 import com.ivart.makedecision.R;
 
-public class DecisionEditActivity extends Activity implements View.OnClickListener{
+public class DecisionEditActivity extends Activity implements View.OnClickListener {
 
     Long decisionId;
     Button firstSquare;
@@ -31,7 +31,7 @@ public class DecisionEditActivity extends Activity implements View.OnClickListen
         secondSquare = (Button) findViewById(R.id.btn_will_if_it_doesnt);
         thirdSquare = (Button) findViewById(R.id.btn_wont_if_it_happens);
         fourthSquare = (Button) findViewById(R.id.btn_wont_if_it_doesnt);
-        calculate_decision = (ImageView)findViewById(R.id.calculate);
+        calculate_decision = (ImageView) findViewById(R.id.calculate);
 
         setOnClick();
         //Toast.makeText(this, ""+decisionId, Toast.LENGTH_SHORT).show();
@@ -41,16 +41,16 @@ public class DecisionEditActivity extends Activity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_will_if_it_happens:
-                startEditDescriptionListActivity(decisionId,1);
+                startEditDescriptionListActivity(decisionId, 1);
                 break;
             case R.id.btn_will_if_it_doesnt:
-                startEditDescriptionListActivity(decisionId,2);
+                startEditDescriptionListActivity(decisionId, 2);
                 break;
             case R.id.btn_wont_if_it_happens:
-                startEditDescriptionListActivity(decisionId,3);
+                startEditDescriptionListActivity(decisionId, 3);
                 break;
             case R.id.btn_wont_if_it_doesnt:
-                startEditDescriptionListActivity(decisionId,4);
+                startEditDescriptionListActivity(decisionId, 4);
                 break;
             case R.id.calculate:
                 CalculateDecison calculate = new CalculateDecison();
@@ -59,11 +59,14 @@ public class DecisionEditActivity extends Activity implements View.OnClickListen
                 double wontItItHapp = calculate.getRaitingBySquare(decisionId, 3);
                 double wontItItDoesnt = calculate.getRaitingBySquare(decisionId, 4);
                 double[] results = {ifItHapp, ifItDoesnt, wontItItHapp, wontItItDoesnt};
-                Intent intent = new Intent(this, PieChartActivity.class);
-                intent.putExtra("results", results);
-                intent.putExtra("decisionId", decisionId);
-                startActivity(intent);
+                if (ifItHapp != 0 && ifItDoesnt != 0 && wontItItDoesnt != 0 && wontItItHapp != 0) {
+                    Intent intent = new Intent(this, PieChartActivity.class);
+                    intent.putExtra("results", results);
+                    intent.putExtra("decisionId", decisionId);
+                    startActivity(intent);
+                } else Toast.makeText(this, R.string.fill_all_squares, Toast.LENGTH_LONG).show();
                 break;
+
         }
     }
 
@@ -81,5 +84,5 @@ public class DecisionEditActivity extends Activity implements View.OnClickListen
         fourthSquare.setOnClickListener(this);
         calculate_decision.setOnClickListener(this);
     }
-    
+
 }
