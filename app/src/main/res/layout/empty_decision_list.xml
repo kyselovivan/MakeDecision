@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:fab="http://schemas.android.com/apk/res-auto"
+             android:background="@color/primary_dark"
+             android:orientation="vertical">
+
+<TextView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
-    android:background="@color/primary_dark"
-    android:orientation="vertical">
+    android:text="@string/no_decisions_yet"
+    android:textSize="18sp"
+    android:gravity="center_vertical|center_horizontal"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/no_decisions_yet"
-        android:textSize="18sp"
-        android:gravity="center_vertical|center_horizontal"/>
+<com.melnykov.fab.FloatingActionButton
+    android:id="@+id/btn_clear_decisions"
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:layout_gravity="bottom|right"
+    android:layout_margin="24dp"
+    android:src="@drawable/ic_clear_black_24dp"
+    android:onClick="onClick"
+    fab:fab_colorNormal="@color/theme_red_primary"
+    fab:fab_colorPressed="@color/theme_yellow_primary_dark"
+    fab:fab_colorRipple="@color/theme_yellow_primary_dark"
+    />
 
-    <com.melnykov.fab.FloatingActionButton
-        android:id="@+id/btn_clear_decisions"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="24dp"
-        android:src="@drawable/ic_clear_black_24dp"
-        android:onClick="onClick"
-        fab:fab_colorNormal="@color/theme_red_primary"
-        fab:fab_colorPressed="@color/theme_yellow_primary_dark"
-        fab:fab_colorRipple="@color/theme_yellow_primary_dark"
-        />
 </FrameLayout>

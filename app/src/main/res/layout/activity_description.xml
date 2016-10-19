@@ -22,7 +22,6 @@
         android:background="@android:color/transparent"
         android:textAlignment="center"
         android:layout_alignParentTop="true"
-        android:cursorVisible="false"
         android:layout_above="@+id/raiting_bar"/>
 
     <RatingBar
