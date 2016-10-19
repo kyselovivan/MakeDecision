@@ -1,65 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">MakeDecision</string>
-    <string name="make_decision">Принять решение</string>
-    <string name="get_my_decisions">Мои решения</string>
-    <string name="about_us">Инфо</string>
-    <string name="txtv_enter_question">Введите вопрос</string>
-    <string name="add_decision">Добавить решение</string>
-    <string name="enter_question">Пожалуйста, введите вопрос!</string>
-    <string name="clear_decisions">Удалить решения</string>
-    <string name="what_will_if_it_happens">Что будет,\n если это\n произойдет?</string>
-    <string name="what_will_if_it_doesnt_happen">Что будет,\n если это\n <b><i>НЕ</i></b> произойдет?</string>
-    <string name="what_wont_be_if_it_happens">Чего <b><i>НЕ</i></b> будет,\n если это\n произойдет?</string>
-    <string name="what_wont_be_if_id_doesnt_happens">Чего <b><i>НЕ</i></b> будет,\n если это\n <b><i>НЕ</i></b> произойдет?</string>
-    <string name="enter_description">Добавьте описание и выберите рейтинг\n затем кликните \"+\"</string>
-    <string name="add_description">Добавить</string>
-    <string name="description_was_added">Описание добавлено! Можете добавить ещё в этот квадрат либо заполнять другие квадраты! Также вы можете рассчитать решение нажав на иконку диаграммы!</string>
-    <string name="please_enter_description">Пожалуйста введите описание и назначте уровень важности (от 1 до 5), затем кликните \"+\"</string>
-    <string name="aboutUs">MakeDecision версия 1.0</string>
-    <string name="delete_all_decisions">Вы хотите удалить все решения?</string>
-    <string name="cancel">Отмена</string>
-    <string name="delete_all">Удалить</string>
-    <string name="delete_description">Удалить это решение ?</string>
-    <string name="clear_description">Удалить описания</string>
-    <string name="description_rait">Рейтинг</string>
-    <string name="delete_all_descriptions">Удалить все описания ?</string>
-    <string name="delete_single_description">Удалить это описание ?</string>
-    <string name="edit_description">Обновить описание</string>
-    <string name="edit_hint_description">Редактируйте описание после\n нажмите \"+\"</string>
-    <string name="back">back</string>
-    <string name="transition_toolbar">toolbar</string>
-    <string name="hint_enter_the_question">Введите интересующий вас\n вопрос или проблему,\n после нажмите \"+\"</string>
-    <string name="calculate">Рассчитать</string>
-    <string name="Розрахувати">Рассчитать</string>
-    <string name="action_settings">action_settings</string>
-    <string name="delete_one">Удалить</string>
-    <string name="decart_title">О технике\n \"Квадрат Декарта\"</string>
-    <string name="edit_decision_name">Изменить</string>
-    <string name="descarts_sqare_technique"><p>Хотите принять осознанное решение?\n Тогда техника \"Квадрат Декарта\" поможет Вам сделать это.\n
-Ответьте себе на 4 вопроса:\n
-1)Что будет если это произойдет ?\n
-2)Что будет если это не произойдет ?\n
-3)Чего не будет если это произойдет ?\n
-4)Чего не будет если это не произойдет ?\n
-Эта техника позволит разобраться со всеми скрытыми внутри Вас опасениями и возражениями.\n\n
-Детальнее\n\n
-Начните с \"Принять решение\". Вводим вопрос и нажимаем \"+\".\n
-Видите квадрат из четырех вопросов и диаграмму? Выбирайте любой из них для начала и отвечайте. Насколько это важно для
-вас? Оцените от 1 до 5. Чем выше балл - тем важнее это для Вас.
-Нажимаем \"+\".\n
-Облегчите себе работу: дайте побольше ответов в каждый квадрат, оцените их по приоритетам - это упростит принятие
-решения и поможет Вам самому разобраться.\n
-Диаграммой можно воспользоваться после заполнения всех или нескольких квадратов. Она отобразит наиболее подходящий для
-Вас вариант (в процентном соотношении).\n
-В любой момент можно вернуться к «Моим решениям» в главном меню. Нажав на одно из них - Вы снова увидите квадрат Декарта.
-При клике на любой из вопросов, открывается список ответов, данных ранее. Его можно корректировать. Нажав \"+\" - вы
-добавите ещё ответ. Длительно кликнув на ответе - сможете удалить.\n
-А можно удалить все решения сразу, нажав «Мои решения / х», или редактировать каждое отдельное решение, длительно
-удерживая его.\n\n
-Взвешенных Вам решений!\n</p></string>
-    <string name="noDecisions">Список решений пуст</string>
-    <string name="no_decisions_yet">Нет решений</string>
-    <string name="fill_all_squares">Пожалуйста, заполните все квадраты, после воспользуйтесь диаграммой :)</string>
-
+    <string name="add_decision">Add decision</string>
+    <string name="about_us">Info</string>
+    <string name="add_description">Add description</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear_decisions">Delete decision</string>
+    <string name="clear_description">Delete description</string>
+    <string name="delete_all">Delete all</string>
+    <string name="delete_all_decisions">Are you sure you want to delete all decisions?</string>
+    <string name="delete_all_descriptions">Delete all descriptions?</string>
+    <string name="delete_description">Delete this decision?</string>
+    <string name="delete_single_description">Delete this description?</string>
+    <string name="description_rait">Raiting</string>
+    <string name="description_was_added">Description added! You can add another one in this square or fill another square! Also you can calculate your decision clicked on chart icon!</string>
+    <string name="edit_description">Update description</string>
+    <string name="edit_hint_description">Edit description then click \"+\"</string>
+    <string name="enter_description">Add description and select rating\n severity then click \"+\"</string>
+    <string name="enter_question">Please enter the name of decision!</string>
+    <string name="get_my_decisions">My decisions</string>
+    <string name="make_decision">Make decision</string>
+    <string name="please_enter_description">Please enter description and set severity (from 1 to 5), then click \"+\"</string>
+    <string name="txtv_enter_question">Please enter the question:</string>
+    <string name="what_will_if_it_doesnt_happen">What will be\n if it\n <b><i>DOESN\'T</i></b> happen?</string>
+    <string name="what_will_if_it_happens">What will be\n if it\n happens?</string>
+    <string name="what_wont_be_if_id_doesnt_happens">What <b><i>WON\'T</i></b> be\n if it\n <b><i>DOESN\'T</i></b> happen?</string>
+    <string name="what_wont_be_if_it_happens">What <b><i>WON\'T</i></b> be\n if it\n happens?</string>
+    <string name="hint_enter_the_question">Enter the question\n or a name of problem\n then click \"+\"</string>
+    <string name="calculate">Calculate</string>
+    <string name="edit_decision_name">Edit</string>
+    <string name="delete_one">Delete</string>
+    <string name="decart_title">About technique\n“Descartes Square”</string>
+    <string name="descarts_sqare_technique"><p>Do you want to make conscious decision?\n Then \"Descartes Square\" technique will help you to do so.\n
+    Answer four questions.\n
+    1) What will be if it happens?\n
+    2) What will be if it doesn\'t happen?\n
+    3) What won\'t be if it happens?\n
+    4) What won\'t be if it doesn\'t happen?\n
+    This technique will help you to sort all inner concerns and objections out.\n\n
+In detail\n\n
+Start from \"Make a decision\". Type a question and press \"+\".\n
+Can you see a square with four questions and a diagram? Choose any of them and start answering. How important is it for you? Evaluate from 1 to 5. The higher mark the more important it is for you.
+Press \"+\".\n
+Make your work easier: give as many answers as you can in each square, evaluate them in preference manner – it will help you to sort everything out.\n
+You can use a diagram after all or few squares will be filled in. It will show the most suitable option for you (in percentage).\n
+        At any point you can come back to \"My decisions\" in the main menu. If you choose one of decisions you will see Descartes Square again and after clicking each square you will see the list of your previous answers. It can be modified. You can add answers to any square by pressing \"+\". You can also delete an answer by durable press on it.\n
+It is possible to delete all decisions by pressing \"My decisions\"\/ x\" or edit each particular decision by durable press on it.\n
+        Enjoy and make right decisions!\n</p></string>
+    <string name="noDecisions">The list of decisions is empty</string>
+    <string name="no_decisions_yet">No decisions yet</string>
+    <string name="fill_all_squares">Please fill out all squares then use diagram :) </string>
 </resources>

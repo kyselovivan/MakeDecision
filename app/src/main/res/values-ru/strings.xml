@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">MakeDecision</string>
+
+    <string name="make_decision">Принять решение</string>
+    <string name="get_my_decisions">Мои решения</string>
+    <string name="about_us">Инфо</string>
+    <string name="txtv_enter_question">Введите вопрос</string>
+    <string name="add_decision">Добавить решение</string>
+    <string name="enter_question">Пожалуйста, введите вопрос!</string>
+    <string name="clear_decisions">Удалить решения</string>
+    <string name="what_will_if_it_happens">Что будет,\n если это\n произойдет?</string>
+    <string name="what_will_if_it_doesnt_happen">Что будет,\n если это\n <b><i>НЕ</i></b> произойдет?</string>
+    <string name="what_wont_be_if_it_happens">Чего <b><i>НЕ</i></b> будет,\n если это\n произойдет?</string>
+    <string name="what_wont_be_if_id_doesnt_happens">Чего <b><i>НЕ</i></b> будет,\n если это\n <b><i>НЕ</i></b> произойдет?</string>
+    <string name="enter_description">Добавьте описание и выберите рейтинг\n затем кликните \"+\"</string>
+    <string name="add_description">Добавить</string>
+    <string name="description_was_added">Описание добавлено! Можете добавить ещё в этот квадрат либо заполнять другие квадраты!</string>
+    <string name="please_enter_description">Пожалуйста введите описание и назначте уровень важности (от 1 до 5), затем кликните \"+\"</string>
+    <string name="aboutUs">MakeDecision версия 1.0</string>
+    <string name="delete_all_decisions">Вы хотите удалить все решения?</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete_all">Удалить</string>
+    <string name="delete_description">Удалить это решение ?</string>
+    <string name="clear_description">Удалить описания</string>
+    <string name="description_rait">Рейтинг</string>
+    <string name="delete_all_descriptions">Удалить все описания ?</string>
+    <string name="delete_single_description">Удалить это описание ?</string>
+    <string name="edit_description">Обновить описание</string>
+    <string name="edit_hint_description">Редактируйте описание после\n нажмите \"+\"</string>
+    <string name="back">back</string>
+    <string name="transition_toolbar">toolbar</string>
+    <string name="hint_enter_the_question">Введите интересующий вас\n вопрос или проблему,\n после нажмите \"+\"</string>
+    <string name="calculate">Рассчитать</string>
+    <string name="Розрахувати">Рассчитать</string>
+    <string name="action_settings">action_settings</string>
+    <string name="delete_one">Удалить</string>
+    <string name="decart_title">О технике\n \"Квадрат Декарта\"</string>
+    <string name="edit_decision_name">Изменить</string>
+        <string name="descarts_sqare_technique"><p>Хотите принять осознанное решение?\n Тогда техника \"Квадрат Декарта\" поможет Вам сделать это.\n
+Ответьте себе на 4 вопроса:\n
+1)Что будет если это произойдет ?\n
+2)Что будет если это не произойдет ?\n
+3)Чего не будет если это произойдет ?\n
+4)Чего не будет если это не произойдет ?\n
+Эта техника позволит разобраться со всеми скрытыми внутри Вас опасениями и возражениями.\n\n
+Детальнее\n\n
+Начните с \"Принять решение\". Вводим вопрос и нажимаем \"+\".\n
+Видите квадрат из четырех вопросов и диаграмму? Выбирайте любой из них для начала и отвечайте. Насколько это важно для
+вас? Оцените от 1 до 5. Чем выше балл - тем важнее это для Вас.
+Нажимаем \"+\".\n
+Облегчите себе работу: дайте побольше ответов в каждый квадрат, оцените их по приоритетам - это упростит принятие
+решения и поможет Вам самому разобраться.\n
+Диаграммой можно воспользоваться после заполнения всех или нескольких квадратов. Она отобразит наиболее подходящий для
+Вас вариант (в процентном соотношении).\n
+В любой момент можно вернуться к «Моим решениям» в главном меню. Нажав на одно из них - Вы снова увидите квадрат Декарта.
+При клике на любой из вопросов, открывается список ответов, данных ранее. Его можно корректировать. Нажав \"+\" - вы
+добавите ещё ответ. Длительно кликнув на ответе - сможете удалить.\n
+А можно удалить все решения сразу, нажав «Мои решения / х», или редактировать каждое отдельное решение, длительно
+удерживая его.\n\n
+Взвешенных Вам решений!\n</p></string>
+    <string name="noDecisions">Список решений пуст</string>
+    <string name="no_decisions_yet">Нет решений</string>
+    <string name="checking_before_calculate">Пожалуйста, заполните все квадраты для правильного расчёта решения</string>
+    <string name="fill_all_squares">Пожалуйста, заполните все квадраты, после воспользуйтесь диаграммой :)</string>
+
+</resources>
