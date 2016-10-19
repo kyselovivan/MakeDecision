@@ -46,7 +46,7 @@ public class DescriptionListAdapter extends RealmBaseAdapter<DecisionDescription
 
         DecisionDescription item = adapterData.get(position);
         viewHolder.textStamp.setText(item.getDescriptionText());
-        viewHolder.raitStamp.setText(""+item.getRaiting());
+        viewHolder.raitStamp.setText(""+(int)item.getRaiting());
         return convertView;
     }
 
