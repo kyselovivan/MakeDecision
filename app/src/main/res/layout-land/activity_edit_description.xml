@@ -20,7 +20,6 @@
         android:background="@android:color/transparent"
         android:layout_gravity="center_vertical|center_horizontal"
         android:textAlignment="center"
-        android:cursorVisible="false"
         android:layout_above="@+id/edit_raiting_bar"/>
 
     <RatingBar

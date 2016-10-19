@@ -16,13 +16,12 @@
         android:layout_weight="1"
         android:hint="@string/enter_description"
         android:textColorHint="@color/primary_light"
-        android:textSize="15dp"
+        android:textSize="18dp"
         android:inputType="textCapSentences|textMultiLine"
         android:gravity="center_vertical|center_horizontal"
         android:background="@android:color/transparent"
         android:textAlignment="center"
         android:layout_alignParentTop="true"
-        android:cursorVisible="false"
         android:layout_above="@+id/raiting_bar"/>
 
     <RatingBar

@@ -51,6 +51,5 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:cursorVisible="false"
         android:layout_above="@+id/raiting_bar"/>
 </RelativeLayout>
