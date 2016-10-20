@@ -8,7 +8,8 @@
         android:icon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -16,17 +17,26 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.MakeDecisionActivity"
-            android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Activities.MyDecisionsActivity" />
-        <activity android:name=".Activities.SquareActivity" />
+            android:windowSoftInputMode="adjustResize"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.MyDecisionsActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.SquareActivity"
+                  android:screenOrientation="portrait"/>
         <activity android:name=".Activities.DescriptionActivity"
-                  android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Activities.DecisionEditActivity" />
-        <activity android:name=".Activities.EditDescriptionListActivity" />
+                  android:windowSoftInputMode="adjustResize"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.DecisionEditActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.EditDescriptionListActivity"
+                  android:screenOrientation="portrait"/>
         <activity android:name=".Activities.EditDescriptionActivity"
-                  android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Activities.PieChartActivity" />
-        <activity android:name=".Activities.AboutTechnique"></activity>
+                  android:windowSoftInputMode="adjustResize"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.PieChartActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.AboutTechnique"
+                  android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
