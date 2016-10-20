@@ -13,7 +13,7 @@
     <string name="delete_description">Delete this decision?</string>
     <string name="delete_single_description">Delete this description?</string>
     <string name="description_rait">Raiting</string>
-    <string name="description_was_added">Description added! You can add another one in this square or fill another square! Also you can calculate your decision clicked on chart icon!</string>
+    <string name="description_was_added">Description added! You can add another one in this square or fill another square!</string>
     <string name="edit_description">Update description</string>
     <string name="edit_hint_description">Edit description then click \"+\"</string>
     <string name="enter_description">Add description and select rating\n severity then click \"+\"</string>
@@ -43,7 +43,7 @@ Start from \"Make a decision\". Type a question and press \"+\".\n
 Can you see a square with four questions and a diagram? Choose any of them and start answering. How important is it for you? Evaluate from 1 to 5. The higher mark the more important it is for you.
 Press \"+\".\n
 Make your work easier: give as many answers as you can in each square, evaluate them in preference manner – it will help you to sort everything out.\n
-You can use a diagram after all or few squares will be filled in. It will show the most suitable option for you (in percentage).\n
+You can use a diagram after all will be filled in. It will show the most suitable option for you (in percentage).\n
         At any point you can come back to \"My decisions\" in the main menu. If you choose one of decisions you will see Descartes Square again and after clicking each square you will see the list of your previous answers. It can be modified. You can add answers to any square by pressing \"+\". You can also delete an answer by durable press on it.\n
 It is possible to delete all decisions by pressing \"My decisions\"\/ x\" or edit each particular decision by durable press on it.\n
         Enjoy and make right decisions!\n</p></string>
