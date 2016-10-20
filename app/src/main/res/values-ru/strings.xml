@@ -16,7 +16,6 @@
     <string name="add_description">Добавить</string>
     <string name="description_was_added">Описание добавлено! Можете добавить ещё в этот квадрат либо заполнять другие квадраты!</string>
     <string name="please_enter_description">Пожалуйста введите описание и назначте уровень важности (от 1 до 5), затем кликните \"+\"</string>
-    <string name="aboutUs">MakeDecision версия 1.0</string>
     <string name="delete_all_decisions">Вы хотите удалить все решения?</string>
     <string name="cancel">Отмена</string>
     <string name="delete_all">Удалить</string>
@@ -27,12 +26,7 @@
     <string name="delete_single_description">Удалить это описание ?</string>
     <string name="edit_description">Обновить описание</string>
     <string name="edit_hint_description">Редактируйте описание после\n нажмите \"+\"</string>
-    <string name="back">back</string>
-    <string name="transition_toolbar">toolbar</string>
     <string name="hint_enter_the_question">Введите интересующий вас\n вопрос или проблему,\n после нажмите \"+\"</string>
-    <string name="calculate">Рассчитать</string>
-    <string name="Розрахувати">Рассчитать</string>
-    <string name="action_settings">action_settings</string>
     <string name="delete_one">Удалить</string>
     <string name="decart_title">О технике\n \"Квадрат Декарта\"</string>
     <string name="edit_decision_name">Изменить</string>
@@ -60,7 +54,6 @@
 Взвешенных Вам решений!\n</p></string>
     <string name="noDecisions">Список решений пуст</string>
     <string name="no_decisions_yet">Нет решений</string>
-    <string name="checking_before_calculate">Пожалуйста, заполните все квадраты для правильного расчёта решения</string>
     <string name="fill_all_squares">Пожалуйста, заполните все квадраты, после воспользуйтесь диаграммой :)</string>
 
 </resources>
