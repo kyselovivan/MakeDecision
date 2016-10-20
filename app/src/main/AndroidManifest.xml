@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".MainActivity"
-                  android:screenOrientation="portrait">
+                  >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,26 +17,25 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.MakeDecisionActivity"
-            android:windowSoftInputMode="adjustResize"
-                  android:screenOrientation="portrait"/>
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Activities.MyDecisionsActivity"
-                  android:screenOrientation="portrait"/>
+                  />
         <activity android:name=".Activities.SquareActivity"
-                  android:screenOrientation="portrait"/>
+                  />
         <activity android:name=".Activities.DescriptionActivity"
                   android:windowSoftInputMode="adjustResize"
-                  android:screenOrientation="portrait"/>
+                  />
         <activity android:name=".Activities.DecisionEditActivity"
-                  android:screenOrientation="portrait"/>
+                  />
         <activity android:name=".Activities.EditDescriptionListActivity"
-                  android:screenOrientation="portrait"/>
+                  />
         <activity android:name=".Activities.EditDescriptionActivity"
                   android:windowSoftInputMode="adjustResize"
-                  android:screenOrientation="portrait"/>
+                  />
         <activity android:name=".Activities.PieChartActivity"
-                  android:screenOrientation="portrait"/>
+                  />
         <activity android:name=".Activities.AboutTechnique"
-                  android:screenOrientation="portrait"></activity>
+                  ></activity>
     </application>
 
 </manifest>
