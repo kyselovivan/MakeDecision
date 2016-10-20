@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ivart.makedecision">
+          package="com.ivart.makedecision">
 
     <application
         android:name=".BaseApplication"
@@ -8,34 +8,47 @@
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".MainActivity"
-                  >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+        <supports-screens
+            android:anyDensity="true"
+            android:largeScreens="true"
+            android:largestWidthLimitDp="600"
+            android:normalScreens="true"
+            android:resizeable="true"
+            android:smallScreens="true"
+            android:xlargeScreens="false"/>
+
+        <activity android:name=".MainActivity"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.MakeDecisionActivity"
+        <activity
+            android:name=".Activities.MakeDecisionActivity"
             android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".Activities.MyDecisionsActivity"
-                  />
+            />
         <activity android:name=".Activities.SquareActivity"
-                  />
-        <activity android:name=".Activities.DescriptionActivity"
-                  android:windowSoftInputMode="adjustResize"
-                  />
+            />
+        <activity
+            android:name=".Activities.DescriptionActivity"
+            android:windowSoftInputMode="adjustResize"
+            />
         <activity android:name=".Activities.DecisionEditActivity"
-                  />
+            />
         <activity android:name=".Activities.EditDescriptionListActivity"
-                  />
-        <activity android:name=".Activities.EditDescriptionActivity"
-                  android:windowSoftInputMode="adjustResize"
-                  />
+            />
+        <activity
+            android:name=".Activities.EditDescriptionActivity"
+            android:windowSoftInputMode="adjustResize"
+            />
         <activity android:name=".Activities.PieChartActivity"
-                  />
+            />
         <activity android:name=".Activities.AboutTechnique"
-                  ></activity>
+            ></activity>
     </application>
 
 </manifest>
