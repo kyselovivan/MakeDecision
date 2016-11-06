@@ -33,6 +33,8 @@
             />
         <activity android:name=".Activities.SquareActivity"
             />
+        <activity android:name=".Activities.YesNo"
+            />
         <activity
             android:name=".Activities.DescriptionActivity"
             android:windowSoftInputMode="adjustResize"

@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_pie_chart"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.ivart.makedecision.Activities.PieChartActivity"
-    android:background="@color/primary_dark">
+             xmlns:fab="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/activity_pie_chart"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/primary_dark"
+             tools:context="com.ivart.makedecision.Activities.PieChartActivity">
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/myPieChart"
-        android:background="@color/primary_dark"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.github.mikephil.charting.charts.PieChart>
+        android:layout_height="match_parent"
+        android:background="@color/primary_dark"></com.github.mikephil.charting.charts.PieChart>
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/unnamed"
+        android:onClick="onClick"
+        android:layout_gravity="bottom|right"
+        android:id="@+id/imageView2"/>
+
 </FrameLayout>
 
 

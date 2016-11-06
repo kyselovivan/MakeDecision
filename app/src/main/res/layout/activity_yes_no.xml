@@ -1,0 +1,16 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/activity_pie_chart_yes_no"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/primary_dark"
+             tools:context="com.ivart.makedecision.Activities.PieChartActivity">
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/myPieChart2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary_dark">
+    </com.github.mikephil.charting.charts.PieChart>
+</FrameLayout>
