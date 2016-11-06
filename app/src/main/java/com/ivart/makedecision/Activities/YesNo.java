@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
@@ -19,39 +18,30 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.R;
 
 import java.util.ArrayList;
 
-import io.realm.Realm;
 
-public class PieChartActivity extends Activity {
+/**
+ * Created by Artem on 01.11.2016.
+ */
 
-    private float[] yData;
+public class YesNo extends Activity {
+    private float[] yData = {70, 30} ;
     ArrayList<String> questions;
     ArrayList<String> resultQuestion;
     FrameLayout mainActivity;
-    Realm realm;
     PieChart mChart;
-    String decisionName;
-    ImageView btnYesOrNo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pie_chart);
-        btnYesOrNo = (ImageView)findViewById(R.id.btn_yesOrNo);
-        Intent intent = getIntent();
-        double[] results = intent.getDoubleArrayExtra("results");
-        Long id = intent.getLongExtra("decisionId",0);
-        decisionName = getDecisionName(id);
-        yData = new float[results.length];
-        for (int i = 0; i < results.length; i++) {
-            yData[i] = (float) results[i];
-        }
-        mainActivity = (FrameLayout) findViewById(R.id.activity_pie_chart);
-        mChart = (PieChart) findViewById(R.id.myPieChart);
+        setContentView(R.layout.activity_yes_no);
+
+        mainActivity = (FrameLayout) findViewById(R.id.activity_pie_chart_yes_no);
+        mChart = (PieChart) findViewById(R.id.myPieChart2);
 
         mChart.setUsePercentValues(true);
         mChart.setDescription("");
@@ -74,21 +64,13 @@ public class PieChartActivity extends Activity {
             public void onValueSelected(Entry e, Highlight h) {
                 if(e==null) return;
                 else{
-                    Toast.makeText(PieChartActivity.this," "+questions.get((int)e.getData()),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(YesNo.this," "+questions.get((int)e.getData()),Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onNothingSelected() {
 
-            }
-        });
-        btnYesOrNo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view) {
-                Intent intent = new Intent(PieChartActivity.this, YesOrNoActivity.class);
-                intent.putExtra("resultArray", yData);
-                startActivity(intent);
             }
         });
     }
@@ -100,13 +82,10 @@ public class PieChartActivity extends Activity {
 
         colors.add(Color.parseColor("#54af49"));//green
         colors.add(Color.parseColor("#f08080"));//red
-        colors.add(Color.parseColor("#ffff8d"));//yellow
-        colors.add(Color.parseColor("#03a9f4"));//blue
 
-        questions.add(getBaseContext().getString(R.string.what_will_if_it_happens));
-        questions.add(getBaseContext().getString(R.string.what_will_if_it_doesnt_happen));
-        questions.add(getBaseContext().getString(R.string.what_wont_be_if_it_happens));
-        questions.add(getBaseContext().getString(R.string.what_wont_be_if_id_doesnt_happens));
+        questions.add("Yes");
+        questions.add("No");
+
 
 
         ArrayList<Integer> resultColor = new ArrayList<>();
@@ -138,25 +117,12 @@ public class PieChartActivity extends Activity {
         pieData.setValueFormatter(new PercentFormatter());
         pieData.setValueTextSize(20f);
         pieData.setValueTextColor(Color.parseColor("#212121"));
-//        pieData.setValueTypeface(Typeface.SANS_SERIF);
 
         mChart.setData(pieData);
         mChart.highlightValues(null);
         mChart.invalidate();
     }
 
-    public String getDecisionName(final long id){
-        final StringBuilder name = new StringBuilder();
-        realm = Realm.getDefaultInstance();
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                Decision result = realm.where(Decision.class).equalTo("id", id).findFirst();
-                name.append(result.getmDecisionName());
-            }
-        });
-        return name.toString();
-    }
 
     public void onClick(View view) {
         Intent intent = new Intent(this, YesNo.class);
