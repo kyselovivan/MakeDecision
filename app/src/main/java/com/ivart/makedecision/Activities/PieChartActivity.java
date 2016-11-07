@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
@@ -33,11 +35,13 @@ public class PieChartActivity extends Activity {
     Realm realm;
     PieChart mChart;
     String decisionName;
+    ImageView btnYesOrNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pie_chart);
+        btnYesOrNo = (ImageView)findViewById(R.id.btn_yesOrNo);
         Intent intent = getIntent();
         double[] results = intent.getDoubleArrayExtra("results");
         Long id = intent.getLongExtra("decisionId",0);
@@ -77,6 +81,14 @@ public class PieChartActivity extends Activity {
             @Override
             public void onNothingSelected() {
 
+            }
+        });
+        btnYesOrNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                Intent intent = new Intent(PieChartActivity.this, YesOrNoActivity.class);
+                intent.putExtra("resultArray", yData);
+                startActivity(intent);
             }
         });
     }
