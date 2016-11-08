@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
@@ -23,6 +23,8 @@ import com.ivart.makedecision.Model.Decision;
 import com.ivart.makedecision.R;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import io.realm.Realm;
 
@@ -35,13 +37,13 @@ public class PieChartActivity extends Activity {
     Realm realm;
     PieChart mChart;
     String decisionName;
-    ImageView btnYesOrNo;
+    TextView btnYesOrNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pie_chart);
-        btnYesOrNo = (ImageView)findViewById(R.id.btn_yesOrNo);
+        btnYesOrNo = (TextView)findViewById(R.id.btn_yesOrNo);
         Intent intent = getIntent();
         double[] results = intent.getDoubleArrayExtra("results");
         Long id = intent.getLongExtra("decisionId",0);
@@ -83,14 +85,6 @@ public class PieChartActivity extends Activity {
 
             }
         });
-        btnYesOrNo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view) {
-                Intent intent = new Intent(PieChartActivity.this, YesOrNoActivity.class);
-                intent.putExtra("resultArray", yData);
-                startActivity(intent);
-            }
-        });
     }
 
     private void addData() {
@@ -126,7 +120,7 @@ public class PieChartActivity extends Activity {
         l.setPosition(Legend.LegendPosition.LEFT_OF_CHART);
         l.setTextSize(10.5F);
 
-        PieDataSet dataSet = new PieDataSet(yVals, "Make Decision");
+        PieDataSet dataSet = new PieDataSet(yVals, "Your Decision");
         dataSet.setSliceSpace(3);
         dataSet.setSelectionShift(4);
 
@@ -157,9 +151,59 @@ public class PieChartActivity extends Activity {
         });
         return name.toString();
     }
+    @Override
+    public void onRestart(){
+        super.onRestart();
+        setContentView(R.layout.activity_pie_chart);
+        Intent intent = getIntent();
+        double[] results = intent.getDoubleArrayExtra("results");
+        Long id = intent.getLongExtra("decisionId",0);
+        decisionName = getDecisionName(id);
+        yData = new float[results.length];
+        for (int i = 0; i < results.length; i++) {
+            yData[i] = (float) results[i];
+        }
+        mainActivity = (FrameLayout) findViewById(R.id.activity_pie_chart);
+        mChart = (PieChart) findViewById(R.id.myPieChart);
+
+        mChart.setUsePercentValues(true);
+        mChart.setDescription("");
+        mChart.setDescriptionTextSize(20);
+
+        mChart.setDrawHoleEnabled(true);
+        mChart.setHoleRadius(5);
+        mChart.setTransparentCircleRadius(7);
+
+        mChart.setRotationAngle(0);
+        mChart.setRotationEnabled(true);
+        mChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
+        mChart.animateX(1400, Easing.EasingOption.EaseInOutQuad);
+        mChart.setBackgroundColor(Color.parseColor("#607d8b"));
+
+        addData();
+    }
 
     public void onClick(View view) {
-        Intent intent = new Intent(this, YesNo.class);
-        startActivity(intent);
+        if (btnYesOrNo != null) {
+            btnYesOrNo.setEnabled(false);
+        }
+
+        Timer buttonTimer = new Timer();
+        buttonTimer.schedule(new TimerTask() {
+
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        btnYesOrNo.setEnabled(true);
+                        Intent intent = new Intent(PieChartActivity.this, YesOrNoActivity.class);
+                        intent.putExtra("resultArray", yData);
+                        startActivity(intent);
+                    }
+                });
+            }
+        }, 1000);
     }
 }
