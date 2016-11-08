@@ -32,6 +32,7 @@ public class YesNo extends Activity {
     ArrayList<String> questions;
     ArrayList<String> resultQuestion;
     FrameLayout mainActivity;
+
     PieChart mChart;
 
 
