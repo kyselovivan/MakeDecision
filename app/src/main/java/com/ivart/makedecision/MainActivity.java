@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
-        }, 2000);
+        }, 1000);
     }
 
     public void onClick1(View view) {
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
-        }, 2000);
+        }, 1000);
     }
 
     public void onClick2(View view) {
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
-        }, 2000);
+        }, 1000);
     }
 
 
