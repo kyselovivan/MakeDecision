@@ -49,5 +49,5 @@ It is possible to delete all decisions by pressing \"My decisions\"\/ x\" or edi
     <string name="noDecisions">The list of decisions is empty</string>
     <string name="no_decisions_yet">No decisions yet</string>
     <string name="fill_all_squares">Please fill out all squares then use diagram :) </string>
-    <string name="result">result</string>
+    <string name="result">Result</string>
 </resources>
