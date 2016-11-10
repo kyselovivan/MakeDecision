@@ -55,6 +55,6 @@
     <string name="noDecisions">Список решений пуст</string>
     <string name="no_decisions_yet">Нет решений</string>
     <string name="fill_all_squares">Пожалуйста, заполните все квадраты, после воспользуйтесь диаграммой :)</string>
-    <string name="result">результат</string>
+    <string name="result">Результат</string>
 
 </resources>

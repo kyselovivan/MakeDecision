@@ -27,7 +27,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/primary_text"
         app:sub_btn_background="@color/divider"
-        app:sub_btn_duration="1000"
+        app:sub_btn_duration="1500"
         app:sub_btn_line_color="@color/border"
         app:sub_btn_ripple_color="@color/border"
         app:sub_btn_tick_color="@color/white"

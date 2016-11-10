@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onRestart(){
+    public void onRestart() {
         super.onRestart();
         setContentView(R.layout.activity_main);
     }
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
-        }, 1000);
+        }, 1500);
     }
 
     public void onClick1(View view) {
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
-        }, 1000);
+        }, 1500);
     }
 
     public void onClick2(View view) {
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
-        }, 1000);
+        }, 1500);
     }
 
 

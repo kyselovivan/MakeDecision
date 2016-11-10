@@ -204,6 +204,6 @@ public class PieChartActivity extends Activity {
                     }
                 });
             }
-        }, 1000);
+        }, 1500);
     }
 }
